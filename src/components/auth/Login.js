@@ -27,8 +27,8 @@ export default class Login extends Component {
           <Grid.Row centered>
             <Grid.Column largeScreen={6} computer={6} tablet={10} mobile={16}>
               <Segment>
-                <Header as="h1" textAlign="center">
-                  Log In
+                <Header style={{fontFamily: 'Cinzel'}} as="h1" textAlign="center">
+                  Welcome Investor!
                 </Header>
                 <Form className="login--form" onSubmit={this.submit}>
                   <Form.Field
@@ -46,7 +46,7 @@ export default class Login extends Component {
                     onChange={(e) => this.setState({ password: e.target.value })}
                   />
                   <Form.Field control="input" type="hidden" />
-                  <Button fluid content="Log in" color="purple" />
+                  <Button fluid content="Log in" className="ui inverted violet button" />
                 </Form>
                 <Message className="auth--message">
                   Not registered yet? <Link to="/register">Sign Up</Link>

@@ -8,7 +8,8 @@ export default class BudgetForm extends Component {
     amtStart: "",
     categoryId: "",
     amtRemaining: "",
-    dateEnd: ""
+    dateEnd: "",
+    userId: ""
   };
 
   handleFieldChange = evt => {
@@ -18,6 +19,7 @@ export default class BudgetForm extends Component {
   };
 
   constructNewBudget = evt => {
+    let currentUser = JSON.parse(localStorage.getItem("user"));
     evt.preventDefault();
     if (!this.state.categoryId) {
       window.alert("Please select a category for your budget.");
@@ -27,7 +29,8 @@ export default class BudgetForm extends Component {
         amtStart: this.state.amtStart,
         amtRemaining: this.state.amtStart,
         dateEnd: this.state.dateEnd,
-        categoryId: parseInt(this.state.categoryId)
+        categoryId: parseInt(this.state.categoryId),
+        userId: currentUser.id
       };
       this.props
         .addBudget(budget)
@@ -52,9 +55,9 @@ export default class BudgetForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="amtStart">Total Budget</label>
-            <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+            <div className="input-group">
+            <div className="input-group-prepend">
+                <span className="input-group-text">$</span>
             </div>
             <input
               type="text"

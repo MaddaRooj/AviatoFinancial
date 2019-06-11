@@ -28,7 +28,7 @@ export default class Register extends Component {
           <Grid.Row centered>
             <Grid.Column largeScreen={6} computer={6} tablet={10} mobile={16}>
               <Segment>
-                <Header as="h1" textAlign="center">
+                <Header style={{fontFamily: 'Cinzel'}} as="h1" textAlign="center">
                   Register
                 </Header>
                 <Form className="register--form" onSubmit={this.submit}>
@@ -54,7 +54,7 @@ export default class Register extends Component {
                     onChange={(e) => this.setState({ password: e.target.value })}
                   />
                   <Form.Field control="input" type="hidden" />
-                  <Button fluid content="Register" color="purple" />
+                  <Button fluid content="Register" className="ui inverted violet button" />
                 </Form>
                 <Message className="auth--message">
                   Already registered? <Link to="/login">Log In</Link>
