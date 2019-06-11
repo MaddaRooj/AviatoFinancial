@@ -1,0 +1,95 @@
+.budgets {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Cinzel', serif;
+    text-decoration: underline #A79344;
+    font-size: 30px;
+}
+
+.budgetDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnDiv {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.card-body {
+    width: 600px;
+    border: 1px lightgrey solid;
+    box-shadow: 2px 2px 6px 2px black;
+}
+
+.detail-body {
+    width: 800px;
+    border: 1px lightgrey solid;
+    border-radius: 10px;
+    margin-top: 20px
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 700
+}
+
+.budgetDetail {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-family: 'Cinzel', serif;
+}
+
+.detailCard {
+    width: 80%;
+    border: lightgrey 1px solid;
+    border-radius: 10px
+}
+
+.details {
+    color: steelblue
+}
+
+.details:hover {
+    color: silver
+}
+
+.budgetButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+.budgetForm {
+    margin-top: 150px;
+    margin-left: 40px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    border: 1px solid black;
+    padding: 20px;
+    width: 90%
+}
+
+.form-control {
+    width: 70%
+}
+
+.progressBar {
+    width: 400px;
+    height: 15px
+}
+
+.progressBar2 {
+    width: 600px;
+    height: 20px;
+    margin-bottom: 30px;
+}

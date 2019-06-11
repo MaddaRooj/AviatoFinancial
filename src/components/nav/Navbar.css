@@ -1,0 +1,20 @@
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #A79344;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    color: #A79344
+}
+.navbar-brand:hover {
+    font-size: 1.6rem;
+    color: white;
+}
+
+nav {
+    font-family: 'Cinzel', serif;
+}
