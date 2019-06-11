@@ -20,7 +20,7 @@ export default class Budget extends Component {
               {this.props.budget.name}
             <ProgressBar animated variant="success" className="progressBar2 mt-5" now={this.state.now} label={`${this.state.now}%`} />
             </h4>
-            <h6 className="card-title">{this.props.budget.amtStart}</h6>
+            <h6 className="card-title">{`$${this.props.budget.amtStart}`}</h6>
             <div className="d-flex flex-row-reverse">
               <button onClick={
                 () => {

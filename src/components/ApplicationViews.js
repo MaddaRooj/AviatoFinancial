@@ -69,7 +69,11 @@ class ApplicationViews extends Component {
           return <Home />
         }} /> */}
         <Route exact path="/budgets" render={(props) => {
-          return <BudgetList {...props} deleteBudget={this.deleteBudget} budgets={this.state.budgets} />
+          return this.state.user ? (
+            <BudgetList {...props} deleteBudget={this.deleteBudget} budgets={this.state.budgets} />
+          ) : (
+              <Redirect to="/login" />
+            )
         }} />
         <Route path="/budgets/new" render={(props) => {
           return <BudgetForm {...props}

@@ -50,7 +50,6 @@ export const login = (email, password) => {
     })
 }
 
-
 export const getUser = (userId) => {
   return fetch(`${url}/${userId}`)
     .then(res => res.json());
@@ -84,3 +83,5 @@ export const loginWithFirebase = (email, password) => {
       return data.user.uid;
     })
 }
+
+// const user = JSON.parse(localStorage.getItem("user"))

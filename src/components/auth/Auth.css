@@ -1,7 +1,20 @@
 .loginForm {
     margin-top: 120px;
+    font-family: 'Cinzel', serif;
 }
 
 .registerForm {
     margin-top: 120px;
+    font-family: 'Cinzel', serif;
 }
+
+/* .regBtn {
+    border: 2px solid #A79344;
+    color: #A79344;
+    background-color: white;
+} */
+/* .regBtn:hover {
+    border: 2px solid #A79344;
+    background-color: #A79344;
+    color: white;
+} */
