@@ -43,51 +43,56 @@ export default class BudgetForm extends Component {
       <React.Fragment>
         <form className="budgetForm">
           <div className="form-group">
-            <label htmlFor="name">Budget Description</label>
+            <label className="formText" htmlFor="name">Budget Description</label>
             <input
+              style={{ width: "60%" }}
               type="text"
               required
-              className="form-control"
+              className="form-control mt-2 mb-4"
               onChange={this.handleFieldChange}
               id="name"
               placeholder="Budget Name"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="amtStart">Total Budget</label>
-            <div className="input-group">
-            <div className="input-group-prepend">
-                <span className="input-group-text">$</span>
+            <label className="formText" htmlFor="amtStart">Total Budget</label>
+            <div style={{ width: "60%" }} className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text mt-2 mb-4">$</span>
+              </div>
+              <input
+                type="text"
+                required
+                className="form-control mt-2 mb-4"
+                onChange={this.handleFieldChange}
+                id="amtStart"
+                placeholder="Amount"
+              />
             </div>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="amtStart"
-              placeholder="Amount"
-            />
           </div>
-            </div>
           <div className="form-group">
-            <label htmlFor="dateEnd">Date</label>
+            <label className="formText" htmlFor="dateEnd">Date</label>
             <input
+              style={{ width: "30%" }}
               type="date"
               required
-              className="form-control"
+              className="form-control mt-2 mb-4"
               onChange={this.handleFieldChange}
               id="dateEnd"
             />
           </div>
           <div className="form-group">
-            <label className="mr-2" htmlFor="category">Category: </label>
+            <label className="formText mr-2" htmlFor="category">Category: </label>
+            <br></br>
             <select
+              className="formText mt-2"
+              style={{fontSize: "17px"}}
               defaultValue=""
               name="category"
               id="categoryId"
               onChange={this.handleFieldChange}
             >
-              <option value="">Select a Category</option>
+              <option style={{fontSize: "17px"}} className="formText" value="">Select a Category</option>
               {this.props.categories.map(e => (
                 <option key={e.id} id={e.id} value={e.id}>
                   {e.name}
@@ -95,13 +100,21 @@ export default class BudgetForm extends Component {
               ))}
             </select>
           </div>
-          <button
-            type="submit"
-            onClick={this.constructNewBudget}
-            className="btn btn-outline-primary"
-          >
-            Submit
+          <div className="mt-5">
+            <button
+              type="submit"
+              onClick={this.constructNewBudget}
+              className="btn btn-outline-primary"
+            >
+              Submit
           </button>
+            <button
+              onClick={() => this.props.history.push("/budgets")}
+              className="btn btn-outline-danger ml-3"
+            >
+              Cancel
+          </button>
+          </div>
         </form>
       </React.Fragment>
     );

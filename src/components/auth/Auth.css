@@ -1,11 +1,5 @@
-.loginForm {
+.auth--container{
     margin-top: 120px;
-    font-family: 'Cinzel', serif;
-}
-
-.registerForm {
-    margin-top: 120px;
-    font-family: 'Cinzel', serif;
 }
 
 /* .regBtn {

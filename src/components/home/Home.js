@@ -7,9 +7,9 @@ class Home extends Component {
     return (
       <section className="home">
         {
-          <div className=" d-flex flex-column align-items-center mt-5">
-            <h2>Hello, Investor!</h2>
-            <h4>Welcome to Aviato Financial!</h4>
+          <div className="homeDiv d-flex flex-column align-items-center mt-5">
+            <h2 style={{fontFamily: 'Nanum Myeongjo, serif', fontSize: "3rem"}}>Hello, {this.props.user.firstName}!</h2>
+            <h4 style={{fontFamily: 'Nanum Myeongjo, serif', fontSize: "2.5rem"}}>Welcome to Aviato Financial, your personal financial advisor!</h4>
           </div>
         }
       </section>

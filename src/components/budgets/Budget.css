@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel';
     text-decoration: underline #A79344;
     font-size: 30px;
 }
@@ -23,15 +23,19 @@
 
 .card-body {
     width: 600px;
-    border: 1px lightgrey solid;
+    color: #C0B283;
+    border: 3px #A79344 solid;
     box-shadow: 2px 2px 6px 2px black;
+    /* background-color: #373737; */
+    background-color: #3A4660;
 }
 
 .detail-body {
     width: 800px;
-    border: 1px lightgrey solid;
+    border: 1px #A79344 solid;
     border-radius: 10px;
-    margin-top: 20px
+    margin-top: 20px;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 .card-title {
@@ -39,7 +43,8 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    font-weight: 700
+    font-weight: 700;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 .budgetDetail {
@@ -79,17 +84,23 @@
     width: 90%
 }
 
-.form-control {
-    width: 70%
+.formText {
+    font-family: 'Cinzel', serif;
+    color: black;
+    font-size: 2.2rem;
 }
 
 .progressBar {
     width: 400px;
-    height: 15px
+    height: 20px;
+    font-size: 18px;
 }
 
 .progressBar2 {
     width: 600px;
-    height: 20px;
+    height: 30px;
+    font-size: 30px;
+    color: black;
+    font-family: 'Cinzel', serif;
     margin-bottom: 30px;
 }
