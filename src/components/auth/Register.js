@@ -28,7 +28,7 @@ export default class Register extends Component {
           <Grid.Row centered>
             <Grid.Column largeScreen={6} computer={6} tablet={10} mobile={16}>
               <Segment>
-                <Header style={{fontFamily: 'Cinzel'}} as="h1" textAlign="center">
+                <Header style={{fontFamily: 'Cinzel Decorative, cursive'}} as="h1" textAlign="center">
                   Register
                 </Header>
                 <Form className="register--form" onSubmit={this.submit}>

@@ -22,27 +22,27 @@ export default class Login extends Component {
 
   render() {
     return (
-      <Container className="auth--container loginForm">
-        <Grid>
+      <Container className="auth--container">
+        <Grid className="loginForm">
           <Grid.Row centered>
             <Grid.Column largeScreen={6} computer={6} tablet={10} mobile={16}>
               <Segment>
-                <Header style={{fontFamily: 'Cinzel'}} as="h1" textAlign="center">
+                <Header style={{fontFamily: 'Cinzel Decorative, cursive', fontSize: '3rem', color: '#A79344'}} as="h1" textAlign="center">
                   Welcome Investor!
                 </Header>
-                <Form className="login--form" onSubmit={this.submit}>
+                <Form className="loginForm" onSubmit={this.submit}>
                   <Form.Field
                     control="input"
                     type="email"
                     label="Email Address"
-                    placeholder="Enter an email"
+                    placeholder="john.doe@gmail.com"
                     onChange={(e) => this.setState({ email: e.target.value })}
                   />
                   <Form.Field
                     control="input"
                     type="password"
                     label="Password"
-                    placeholder="Password"
+                    placeholder="password"
                     onChange={(e) => this.setState({ password: e.target.value })}
                   />
                   <Form.Field control="input" type="hidden" />

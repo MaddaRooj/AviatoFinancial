@@ -6,21 +6,29 @@ import BudgetManager from "../modules/BudgetManager"
 import BudgetDetail from "./budgets/BudgetDetail"
 import BudgetForm from "./budgets/BudgetForm"
 import CategoryManager from "../modules/CategoryManager"
+import PurchaseManager from "../modules/PurchaseManager"
 import Home from "./home/Home"
 import Login from './auth/Login';
 import Register from './auth/Register';
 import { getUserFromLocalStorage, logout } from './auth/UserManager';
-
 
 class ApplicationViews extends Component {
 
   state = {
     budgets: [],
     categories: [],
+    purchases: [],
     user: getUserFromLocalStorage()
   }
 
-  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+  addBudget = budget =>
+  BudgetManager.post(budget)
+    .then(() => BudgetManager.getAll())
+    .then(budgets =>
+      this.setState({
+        budgets: budgets
+      })
+    );
 
   deleteBudget = id => {
     return fetch(`http://localhost:5002/budgets/${id}`, {
@@ -35,12 +43,25 @@ class ApplicationViews extends Component {
       })
   }
 
-  addBudget = budget =>
-    BudgetManager.post(budget)
-      .then(() => BudgetManager.getAll())
-      .then(budgets =>
+  deletePurchase = id => {
+    return fetch(`http://localhost:5002/purchases/${id}`, {
+      method: "DELETE"
+    })
+      .then(e => e.json())
+      .then(() => fetch(`http://localhost:5002/purchases`))
+      .then(e => e.json())
+      .then(purchases => {
+        this.props.history.push("/purchases");
+        this.setState({ purchases: purchases })
+      })
+  }
+
+  addPurchase = purchase =>
+    PurchaseManager.post(purchase)
+      .then(() => PurchaseManager.getAll())
+      .then(purchases =>
         this.setState({
-          budgets: budgets
+          purchases: purchases
         })
       );
 
@@ -50,6 +71,7 @@ class ApplicationViews extends Component {
     BudgetManager.getAll()
       .then(budgets => newState.budgets = budgets)
       .then(() => CategoryManager.getAll().then(categories => newState.categories = categories))
+      .then(() => PurchaseManager.getAll().then(purchases => newState.purchases = purchases))
       .then(() => this.setState(newState));
   }
 
@@ -65,12 +87,9 @@ class ApplicationViews extends Component {
               <Redirect to="/login" />
             )
         }} />
-        {/* <Route exact path="/" render={(props) => {
-          return <Home />
-        }} /> */}
         <Route exact path="/budgets" render={(props) => {
           return this.state.user ? (
-            <BudgetList {...props} deleteBudget={this.deleteBudget} budgets={this.state.budgets} />
+            <BudgetList {...props} user={this.state.user} deleteBudget={this.deleteBudget} budgets={this.state.budgets} />
           ) : (
               <Redirect to="/login" />
             )
@@ -78,6 +97,7 @@ class ApplicationViews extends Component {
         <Route path="/budgets/new" render={(props) => {
           return <BudgetForm {...props}
             addBudget={this.addBudget}
+            user={this.state.user}
             categories={this.state.categories} />
         }} />
         <Route path="/budgets/:budgetId(\d+)" render={(props) => {
@@ -87,7 +107,7 @@ class ApplicationViews extends Component {
           if (!budget) {
             budget = { id: 404, name: "404" }
           }
-          return <BudgetDetail budget={budget}
+          return <BudgetDetail {...props} purchases={this.state.purchases} user={this.state.user} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
             deleteBudget={this.deleteBudget} />
         }} />
       </React.Fragment>
