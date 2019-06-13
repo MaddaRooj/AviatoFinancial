@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css"
+import BudgetManager from "../../modules/BudgetManager"
 
 export default class TaskModal extends Component {
   state = {
     description: "",
     amount: "",
     dateOfPurchase: "",
-    budgetId: this.props.budget.id
+    budgetId: this.props.budget.id,
+    amtRemaining: ""
   };
 
-  // Update state whenever an input field is edited
   handleFieldChange = evt => {
 
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
+
+  componentDidMount() {
+    BudgetManager.get(this.props.match.params.budgetId).then(budget => {
+      console.log(budget)
+      this.setState({
+        amtRemaining: budget.amtRemaining
+      });
+    });
+  }
 
   constructNewPurchase = evt => {
 
@@ -30,13 +40,18 @@ export default class TaskModal extends Component {
       dateOfPurchase: formattedTime,
       budgetId: this.state.budgetId
     }
+
     this.props.addPurchase(purchase);
+    this.props.updateBudget({
+      id: this.props.match.params.budgetId,
+      amtRemaining: JSON.stringify(this.state.amtRemaining - purchase.amount)
+    })
     this.props.handleClickYes();
   }
 
   render() {
     return (
-      <Modal centered backdrop animation size="lg" isOpen={this.props.toggleModal} toggle={this.props.handleClickNo}>
+      <Modal backdrop animation size="lg" isOpen={this.props.toggleModal} toggle={this.props.handleClickNo}>
         <ModalHeader>
           Did you make a purchase?
         </ModalHeader>

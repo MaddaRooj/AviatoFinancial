@@ -29,6 +29,18 @@
     /* background-color: #373737; */
     background-color: #3A4660;
 }
+.purchase-card-body {
+    width: 100%;
+    color: #C0B283;
+    border: 3px #A79344 solid;
+    /* background-color: #373737; */
+    background-color: #373737;
+    padding: 8px;
+}
+
+.purchaseList {
+    width: 100%
+}
 
 .detail-body {
     width: 800px;
@@ -51,6 +63,7 @@
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    margin-bottom: 60px;
     font-family: 'Cinzel', serif;
 }
 
@@ -58,14 +71,6 @@
     width: 80%;
     border: lightgrey 1px solid;
     border-radius: 10px
-}
-
-.details {
-    color: steelblue
-}
-
-.details:hover {
-    color: silver
 }
 
 .budgetButton {
@@ -100,7 +105,6 @@
     width: 600px;
     height: 30px;
     font-size: 30px;
-    color: black;
     font-family: 'Cinzel', serif;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
