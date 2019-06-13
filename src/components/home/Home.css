@@ -1,7 +1,12 @@
+body {
+    height: 900px
+}
+
 .home {
     margin-top: 75px;
     display: flex;
     justify-content: center;
+    height: 800px
 }
 
 .homeDiv {

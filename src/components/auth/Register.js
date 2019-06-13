@@ -10,7 +10,9 @@ export default class Register extends Component {
   state = {
     email: '',
     username: '',
-    password: ''
+    password: '',
+    firstName: '',
+    lastName: ''
   }
 
   submit = () => {
@@ -28,10 +30,14 @@ export default class Register extends Component {
           <Grid.Row centered>
             <Grid.Column largeScreen={6} computer={6} tablet={10} mobile={16}>
               <Segment>
-                <Header style={{fontFamily: 'Cinzel Decorative, cursive'}} as="h1" textAlign="center">
+                <Header style={{ fontFamily: 'Cinzel Decorative, cursive' }} as="h1" textAlign="center">
                   Register
                 </Header>
                 <Form className="register--form" onSubmit={this.submit}>
+                  <Form.Group widths='equal'>
+                    <Form.Input onChange={(e) => this.setState({ firstName: e.target.value })} fluid label='First name' placeholder='First name' />
+                    <Form.Input onChange={(e) => this.setState({ lastName: e.target.value })} fluid label='Last name' placeholder='Last name' />
+                  </Form.Group>
                   <Form.Field
                     control="input"
                     type="text"

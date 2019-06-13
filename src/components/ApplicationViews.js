@@ -22,13 +22,23 @@ class ApplicationViews extends Component {
   }
 
   addBudget = budget =>
-  BudgetManager.post(budget)
-    .then(() => BudgetManager.getAll())
-    .then(budgets =>
-      this.setState({
-        budgets: budgets
-      })
-    );
+    BudgetManager.post(budget)
+      .then(() => BudgetManager.getAll())
+      .then(budgets =>
+        this.setState({
+          budgets: budgets
+        })
+      );
+
+  updateBudget = editedBudgetObject => {
+    const newState = {};
+    BudgetManager.editBudget(editedBudgetObject)
+      .then(() => BudgetManager.getAll())
+      .then(budgets => (newState.budgets = budgets))
+      .then(() => {
+        this.setState(newState);
+      });
+  };
 
   deleteBudget = id => {
     return fetch(`http://localhost:5002/budgets/${id}`, {
@@ -51,7 +61,6 @@ class ApplicationViews extends Component {
       .then(() => fetch(`http://localhost:5002/purchases`))
       .then(e => e.json())
       .then(purchases => {
-        this.props.history.push("/purchases");
         this.setState({ purchases: purchases })
       })
   }
@@ -107,7 +116,7 @@ class ApplicationViews extends Component {
           if (!budget) {
             budget = { id: 404, name: "404" }
           }
-          return <BudgetDetail {...props} purchases={this.state.purchases} user={this.state.user} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
+          return <BudgetDetail {...props} purchases={this.state.purchases} user={this.state.user} updateBudget={this.updateBudget} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
             deleteBudget={this.deleteBudget} />
         }} />
       </React.Fragment>

@@ -15,5 +15,14 @@ export default {
       },
       body: JSON.stringify(newBudget)
     }).then(data => data.json())
+  },
+  editBudget (editedBudget) {
+    return fetch(`${remoteURL}/budgets/${editedBudget.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedBudget)
+    }).then(data => data.json());
   }
 }

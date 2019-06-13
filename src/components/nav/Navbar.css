@@ -8,7 +8,8 @@
 
 .navbar-brand {
     font-size: 1.8rem;
-    color: #A79344
+    color: #A79344;
+    /* color: #C0B283; */
 }
 .navbar-brand:hover {
     font-size: 1.8rem;
