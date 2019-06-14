@@ -28,7 +28,7 @@ export default class BudgetList extends Component {
                   <div className="card-title">
                     {/* <img src={dog} alt="dog" className="icon--dog" /> */}
                     <h5 style={{fontSize: '2rem'}} className="card-title">{budget.name}</h5>
-                    <ProgressBar animated now={60} label={`60%`} variant="success" className="progressBar m-3"/>
+                    <ProgressBar animated now={(budget.amtRemaining / budget.amtStart) * 100} label={`${(budget.amtRemaining / budget.amtStart) * 100}%`} variant="success" className="progressBar m-3"/>
                     </div>
                     <div className="btnDiv d-flex flex-row-reverse">
                     <button title="Delete"
