@@ -4,14 +4,12 @@ import "./Budget.css"
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import "bootstrap/dist/css/bootstrap.min.css"
 import { FaTrashAlt } from "react-icons/fa"
-import BudgetManager from "../../modules/BudgetManager"
 
 export default class Budget extends Component {
   state = {
     modalShow: false,
     saveDisabled: false,
-    now: (this.props.budget.amtRemaining / this.props.budget.amtStart) * 100,
-    amtRemaining: ""
+    amtRemaining: this.props.budget.amtRemaining
   }
 
   onClickClose = () => {
@@ -21,21 +19,11 @@ export default class Budget extends Component {
   }
 
   handleClickedDeleteYes = () => {
-    console.log("Modal button click yes");
     this.setState({ modalShow: false })
-    // this.props.removeItem(this.props.item.id);
   }
 
   handleClickedNo = () => {
     this.setState({ modalShow: false });
-  }
-
-  componentDidMount() {
-    BudgetManager.get(this.props.match.params.budgetId).then(budget => {
-      this.setState({
-        amtRemaining: budget.amtRemaining
-      });
-    });
   }
 
   render() {
@@ -45,9 +33,8 @@ export default class Budget extends Component {
         <div key={this.props.budget.id} className="">
           <div className="card-body detail-body">
             <h4 className="card-title">
-              {/* <img src={ dog } alt="dog" className="icon--dog" /> */}
               {this.props.budget.name}
-              <ProgressBar animated variant="success" className="progressBar2 mt-5" now={this.state.now} label={`${this.state.now}%`} />
+              <ProgressBar animated variant="success" className="progressBar2 mt-5" now={(this.props.budget.amtRemaining / this.props.budget.amtStart) * 100} label={`${(this.props.budget.amtRemaining / this.props.budget.amtStart) * 100}%`} />
             </h4>
             <h6 className="card-title">{`Total allotted: $${this.props.budget.amtStart}`}</h6>
             <h6 className="card-title">{`Amount remaining: $${this.props.budget.amtRemaining}`}</h6>
@@ -80,16 +67,15 @@ export default class Budget extends Component {
                         <button title="Delete"
                           onClick={() => {
                             console.log("purchase amount", purchase.amount);
-                            console.log("this.state.amtRemaining", this.state.amtRemaining)
-                            // this.forceUpdate();
-                            // this.props.deletePurchase(purchase.id);
-                            // this.props.updateBudget({
-                            //   amtRemaining: JSON.stringify(parseInt(this.state.amtRemaining) + parseInt(purchase.amount)),
-                            //   id: this.props.match.params.budgetId
-                            // });
+                            console.log("this.state.amtRemaining", this.state.amtRemaining);
+                            this.setState({ amtRemaining: this.props.budget.amtRemaining });
+                            this.props.deletePurchase(purchase.id);
+                            this.props.updateBudget({
+                              amtRemaining: JSON.stringify(parseFloat(this.props.budget.amtRemaining) + parseFloat(purchase.amount)),
+                              id: this.props.match.params.budgetId
+                            });
                           }}
                           className="btn btn-sm btn-outline-danger mt-5"><FaTrashAlt size="14px" /></button>
-                        {/* <Link title="Details" className="btn btn-sm btn-outline-primary mr-2" to={`/budgets/${budget.id}`}><FaInfoCircle size="14px" /></Link> */}
                       </div>
                     </div>
                   </div>
