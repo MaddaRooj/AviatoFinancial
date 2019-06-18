@@ -24,5 +24,8 @@ export default {
       },
       body: JSON.stringify(editedBudget)
     }).then(data => data.json());
+  },
+  search(input) {
+    return fetch(`${remoteURL}/budgets?name_like=${input}`).then(e => e.json());
   }
 }
