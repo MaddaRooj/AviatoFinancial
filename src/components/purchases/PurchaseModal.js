@@ -32,7 +32,7 @@ export default class TaskModal extends Component {
 
     this.props.addPurchase(purchase);
     this.props.updateBudget({
-      id: this.props.match.params.budgetId,
+      id: this.props.budget.id,
       amtRemaining: JSON.stringify(this.props.budget.amtRemaining - purchase.amount)
     })
     this.props.handleClickYes();

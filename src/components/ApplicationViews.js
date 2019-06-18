@@ -91,14 +91,14 @@ class ApplicationViews extends Component {
         <Route path="/register" render={(props) => <Register {...props} onRegister={(user) => this.setState({ user: user })} />} />
         <Route exact path="/" render={(props) => {
           return this.state.user ? (
-            <Home {...props} user={this.state.user} onLogout={logout} />
+            <Home {...props} user={this.state.user} purchases={this.state.purchases} onLogout={logout} />
           ) : (
               <Redirect to="/login" />
             )
         }} />
         <Route exact path="/budgets" render={(props) => {
           return this.state.user ? (
-            <BudgetList {...props} user={this.state.user} deleteBudget={this.deleteBudget} budgets={this.state.budgets} />
+            <BudgetList {...props} user={this.state.user} deleteBudget={this.deleteBudget} purchases={this.state.purchases} budgets={this.state.budgets} />
           ) : (
               <Redirect to="/login" />
             )
@@ -116,7 +116,7 @@ class ApplicationViews extends Component {
           if (!budget) {
             budget = { id: 404, name: "404" }
           }
-          return <BudgetDetail {...props} purchases={this.state.purchases} user={this.state.user} updateBudget={this.updateBudget} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
+          return <BudgetDetail {...props} {...this.props} purchases={this.state.purchases} user={this.state.user} updateBudget={this.updateBudget} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
             deleteBudget={this.deleteBudget} />
         }} />
       </React.Fragment>

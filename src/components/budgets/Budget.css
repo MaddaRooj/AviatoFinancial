@@ -1,28 +1,33 @@
 .budgets {
     margin-top: 10px;
     margin-bottom: 60px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    width: 100%;
     font-family: 'Cinzel';
-    text-decoration: underline #A79344;
-    font-size: 30px;
+}
+
+.listDiv {
+    border: 1px solid black;
+    width: 900px;
 }
 
 .budgetDiv {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
+    margin-top: 100px;
 }
 
-.btnDiv {
-    width: 100%;
-    margin-top: 8px;
+.graphDiv {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 1000px;
+    width: 800px
 }
 
 .card-body {
-    width: 600px;
+    width: 800px;
     color: #C0B283;
     border: 3px #A79344 solid;
     box-shadow: 2px 2px 6px 2px black;
