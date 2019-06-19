@@ -18,6 +18,7 @@ class ApplicationViews extends Component {
     budgets: [],
     categories: [],
     purchases: [],
+    searchResults: [],
     user: getUserFromLocalStorage()
   }
 
@@ -74,6 +75,12 @@ class ApplicationViews extends Component {
         })
       );
 
+  getSearchResults = input => {
+    BudgetManager.search(input).then(results => {
+      this.setState({ searchResults: results });
+    });
+  };
+
   componentDidMount() {
     const newState = {}
 
@@ -98,7 +105,7 @@ class ApplicationViews extends Component {
         }} />
         <Route exact path="/budgets" render={(props) => {
           return this.state.user ? (
-            <BudgetList {...props} user={this.state.user} deleteBudget={this.deleteBudget} purchases={this.state.purchases} budgets={this.state.budgets} />
+            <BudgetList {...props} searchResults={this.state.searchResults} getSearchResults={this.getSearchResults} user={this.state.user} deleteBudget={this.deleteBudget} purchases={this.state.purchases} budgets={this.state.budgets} />
           ) : (
               <Redirect to="/login" />
             )

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PurchaseModal from "../purchases/PurchaseModal"
+import DeleteBudgetDetailModal from './deleteBudgetDetailModal'
 import "./Budget.css"
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -8,23 +9,45 @@ import { FaTrashAlt } from "react-icons/fa"
 
 export default class Budget extends Component {
   state = {
-    modalShow: false,
+    addPurchaseModalShow: false,
+    dltBudgetModalShow: false,
+    dltPurchaseModalShow: false,
     saveDisabled: false,
     amtRemaining: this.props.budget.amtRemaining
   }
 
   onClickClose = () => {
     this.setState({
-      modalShow: true
+      addPurchaseModalShow: true
     })
   }
 
-  handleClickedDeleteYes = () => {
-    this.setState({ modalShow: false })
+  onClickDeleteBudget = () => {
+    this.setState({
+      dltBudgetModalShow: true
+    })
   }
 
+  onClickDeletePurchase = () => {
+    this.setState({
+      dltPurchaseModalShow: true
+    })
+  }
+
+  handleDeleteBudgetYes = () => {
+    this.props.deleteBudget(this.props.budget.id)
+    this.setState({ dltBudgetModalShow: false })
+  }
+
+  handleClickedYes = () => {
+    this.setState({ addPurchaseModalShow: false });
+  }
   handleClickedNo = () => {
-    this.setState({ modalShow: false });
+    this.setState({ addPurchaseModalShow: false });
+  }
+
+  budgetHandleClickedNo = () => {
+    this.setState({ dltBudgetModalShow: false });
   }
 
   sumPurchases = () => {
@@ -40,7 +63,8 @@ export default class Budget extends Component {
   render() {
     return (
       <section className="budgetDetail d-flex justify-content-center">
-        <PurchaseModal {...this.props} budget={this.props.budget} onClickClose={this.onClickClose} handleClickYes={this.handleClickedDeleteYes} handleClickNo={this.handleClickedNo} toggleModal={this.state.modalShow} />
+        <DeleteBudgetDetailModal {...this.props} onClickDeleteBudget={this.onClickDeleteBudget} deleteYes={this.handleDeleteBudgetYes} deleteNo={this.budgetHandleClickedNo} toggleModal={this.state.dltBudgetModalShow} />
+        <PurchaseModal {...this.props} budget={this.props.budget} onClickClose={this.onClickClose} handleClickYes={this.handleClickedNo} handleClickNo={this.handleClickedNo} toggleModal={this.state.addPurchaseModalShow} />
         <div key={this.props.budget.id} className="">
           <div className="card-body detail-body">
             <h4 className="card-title">
@@ -50,19 +74,11 @@ export default class Budget extends Component {
             <h6 className="card-title">{`Total allotted: $${this.props.budget.amtStart}`}</h6>
             <h6 className="card-title">{`Amount remaining: $${(parseFloat(this.props.budget.amtRemaining)).toFixed(2)}`}</h6>
             <div className="d-flex flex-row-reverse">
-              <button onClick={
-                () => {
-                  this.setState(
-                    { saveDisabled: true },
-                    () => this.props.deleteBudget(this.props.budget.id)
-                  )
-                }
-              }
+              <button onClick={this.onClickDeleteBudget}
                 disabled={this.state.saveDisabled}
                 className="card-link btn btn-outline-danger"><FaTrashAlt size="14px" />
               </button>
               <button className="card-link btn btn-outline-primary mr-3" onClick={this.onClickClose}>Enter Purchase</button>
-              <button className="card-link btn btn-outline-primary mr-3" onClick={this.sumPurchases}>Sum Purchases</button>
               {/* <button className="card-link btn btn-outline-primary mr-3" onClick={this.sumPurchases}>Sum Purchases</button> */}
             </div>
             <br></br>
@@ -71,12 +87,12 @@ export default class Budget extends Component {
                 this.props.purchases.filter(purchase => purchase.budgetId === this.props.budget.id).map(purchase =>
                   <div key={purchase.id} className="purchaseList mt-3">
                     <div className="purchase-card-body">
-                      <div className="purchase-card-title">
-                        <h5 style={{ fontSize: '1.4rem', color: "red", float: "right", fontFamily: "Cinzel Decorative, cursive" }}>Amount: -${purchase.amount}</h5>
-                        <h5 style={{ fontSize: '2rem', fontFamily: "Cinzel Decorative, cursive" }} className="ml-3">{purchase.description}</h5>
-                        <h5 style={{ fontSize: '1rem', fontFamily: "Cinzel Decorative, cursive" }}>Date: {purchase.dateOfPurchase}</h5>
+                      <div className="purchase-card-title d-flex flex-row justify-content-between">
+                        <h5 style={{ fontSize: '2rem', fontFamily: "Nanum Myeongjo, serif" }} className="m-3">{purchase.description}</h5>
+                        <h5 style={{ fontSize: '1.4rem', color: "red", fontFamily: "Nanum Myeongjo, serif" }} className="mt-4">Amount: -${purchase.amount}</h5>
                       </div>
-                      <div className="btnDiv d-flex flex-row-reverse">
+                      <div className="btnDiv d-flex flex-row justify-content-between mt-3">
+                        <h5 style={{ fontSize: '1rem', fontFamily: "Nanum Myeongjo, serif" }} className="mt-2 ml-3">Date: {purchase.dateOfPurchase}</h5>
                         <button title="Delete"
                           onClick={() => {
                             this.props.deletePurchase(purchase.id);
@@ -85,7 +101,7 @@ export default class Budget extends Component {
                               id: this.props.budget.id
                             });
                           }}
-                          className="btn btn-sm btn-outline-danger mt-5"><FaTrashAlt size="14px" /></button>
+                          className="btn btn-sm btn-outline-danger"><FaTrashAlt size="14px" /></button>
                       </div>
                     </div>
                   </div>

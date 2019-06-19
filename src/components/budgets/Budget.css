@@ -8,7 +8,7 @@
 .listDiv {
     border: 1px solid black;
     width: 1000px;
-    height: 690px;
+    height: 700px;
 }
 
 .budgetListHead {
@@ -18,7 +18,8 @@
 }
 
 .budgetListScroll {
-
+    margin-bottom: 10px;
+    width: 95%;
     overflow-y: scroll
 }
 ::-webkit-scrollbar {
@@ -38,8 +39,7 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    height: 1000px;
-    width: 800px;
+    height: 400px;
     background: lightgrey
 }
 
@@ -65,7 +65,7 @@
 }
 
 .detail-body {
-    width: 800px;
+    width: 1200px;
     border: 1px #A79344 solid;
     border-radius: 10px;
     margin-top: 20px;
@@ -77,8 +77,6 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    font-weight: 700;
-    font-family: 'Cinzel Decorative', cursive;
 }
 
 .budgetDetail {
