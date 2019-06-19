@@ -6,6 +6,7 @@ import "./Budget.css"
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import "bootstrap/dist/css/bootstrap.min.css"
 import { FaTrashAlt } from "react-icons/fa"
+import DeletePurchaseModal from '../purchases/deletePurchaseModal'
 // import PurchaseManager from "../../modules/PurchaseManager"
 
 export default class Budget extends Component {
@@ -15,7 +16,9 @@ export default class Budget extends Component {
     editBudgetModalShow: false,
     dltPurchaseModalShow: false,
     saveDisabled: false,
-    amtRemaining: this.props.budget.amtRemaining
+    purchaseKeyAmount: [],
+    amtRemaining: this.props.budget.amtRemaining,
+    purchaseKey: 1
   }
 
   // opens add purchase modal
@@ -25,6 +28,7 @@ export default class Budget extends Component {
     })
   }
 
+  // opens edit budget modal
   onClickEditBudget = () => {
     this.setState({
       editBudgetModalShow: true
@@ -45,18 +49,24 @@ export default class Budget extends Component {
     })
   }
 
+  dltPurchaseModalClickYes = () => {
+    this.setState({dltPurchaseModalShow: false})
+  }
+
   // handles if user clicks 'yes' in delete budget modal view
   handleDeleteBudgetYes = () => {
     this.props.deleteBudget(this.props.budget.id)
     this.setState({ dltBudgetModalShow: false })
   }
 
+  // handles yes click in edit budget modal
   handleEditBudgetYes = () => {
     this.setState({
       editBudgetModalShow: false
     })
   }
 
+  // handles no click in edit budget modal
   handleEditBudgetNo = () => {
     this.setState({
       editBudgetModalShow: false
@@ -76,16 +86,6 @@ export default class Budget extends Component {
   // closes the delete budget modal when user clicks no
   budgetHandleClickedNo = () => {
     this.setState({ dltBudgetModalShow: false });
-  }
-
-  sumPurchases = () => {
-    let arr = [];
-    let filteredPurchases = this.props.purchases.filter(purchase => purchase.budgetId === this.props.budget.id);
-    filteredPurchases.forEach(purchase => {
-      arr.push(purchase.amount);
-    })
-    let reducer = (accumulator, current) => parseFloat(accumulator) + parseFloat(current);
-    console.log(arr.reduce(reducer));
   }
 
   render() {
@@ -112,13 +112,13 @@ export default class Budget extends Component {
                 className="card-link btn btn-outline-danger"><FaTrashAlt size="14px" />
               </button>
               <button className="card-link btn btn-outline-primary mr-3" onClick={this.onClickClose}>Enter Purchase</button>
-              {/* <button className="card-link btn btn-outline-primary mr-3" onClick={this.sumPurchases}>Sum Purchases</button> */}
             </div>
             <br></br>
             <div>
               {
                 this.props.purchases.filter(purchase => purchase.budgetId === this.props.budget.id).map(purchase =>
                   <div key={purchase.id} className="purchaseList mt-3">
+                    <DeletePurchaseModal budget={this.props.budget} purchases={this.props.purchases} dltPurchaseModalClickYes={this.dltPurchaseModalClickYes} purchaseKey={this.state.purchaseKey} purchaseKeyAmount={this.state.purchaseKeyAmount} onClickDeletePurchase={this.onClickDeletePurchase} deletePurchase={this.props.deletePurchase} updateBudget={this.props.updateBudget} toggleModal={this.state.dltPurchaseModalShow} />
                     <div className="purchase-card-body">
                       <div className="purchase-card-title d-flex flex-row justify-content-between">
                         <h5 style={{ fontSize: '2rem', fontFamily: "Nanum Myeongjo, serif" }} className="m-3">{purchase.description}</h5>
@@ -128,11 +128,8 @@ export default class Budget extends Component {
                         <h5 style={{ fontSize: '1rem', fontFamily: "Nanum Myeongjo, serif" }} className="mt-2 ml-3">Date: {purchase.dateOfPurchase}</h5>
                         <button title="Delete"
                           onClick={() => {
-                            this.props.deletePurchase(purchase.id);
-                            this.props.updateBudget({
-                              amtRemaining: JSON.stringify(parseFloat(this.props.budget.amtRemaining) + parseFloat(purchase.amount)),
-                              id: this.props.budget.id
-                            });
+                            this.setState({purchaseKey: purchase.id, purchaseKeyAmount: purchase.amount});
+                            this.onClickDeletePurchase();
                           }}
                           className="btn btn-sm btn-outline-danger"><FaTrashAlt /></button>
                       </div>
