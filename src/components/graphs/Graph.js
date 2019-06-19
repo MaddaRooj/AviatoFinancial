@@ -28,7 +28,7 @@ export default class Graph extends Component {
                   backgroundColor: [
                     "#8A212A",
                     "#3A488F",
-                    "#EB9AAA",
+                    "#EB9AFF",
                     "#81F0AA",
                     "#FC1653",
                     "#2274A5",

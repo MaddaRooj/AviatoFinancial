@@ -6,7 +6,7 @@ import { FaPlus, FaTrashAlt, FaInfoCircle } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
 import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
-import DeleteBudgetModal from './deleteBudgetModal'
+import DeleteBudgetModal from './modals/deleteBudgetModal'
 import Graph from '../graphs/Graph'
 import SearchResults from '../search/Search'
 // import BudgetItem from './BudgetItem'
@@ -77,7 +77,7 @@ export default class BudgetList extends Component {
           </h2>
           <button
             type="button"
-            className="ui violet button mr-5"
+            className="ui inverted violet button mr-5"
             onClick={() => {
               this.props.history.push("/budgets/new");
             }}
@@ -109,10 +109,10 @@ export default class BudgetList extends Component {
                   <DeleteBudgetModal toggleModal={ this.state.modalShow } handleClickYes={ this.handleClickedDeleteYes } handleClickNo={ this.handleClickedNo } />
                     <div className="card-body">
                       <div>
-                        <h5 className="d-flex justify-content-end">Budget End: <span className="ml-1" style={{ fontSize: '1.2rem' }}>{budget.dateEnd}</span></h5>
+                        <h5 style={{fontFamily: 'EB Garamond, serif', fontSize: '1.2rem'}} className="d-flex justify-content-end">Budget End: <span className="ml-1" style={{ fontSize: '1.3rem' }}>{budget.dateEnd}</span></h5>
                       </div>
                       <div className="d-flex flex-column align-items-center">
-                        <h5 style={{ fontSize: "2rem", fontFamily: "Cinzel, serif" }} className="card-title">
+                        <h5 style={{ fontSize: "2rem", fontFamily: "EB Garamond, serif" }} className="card-title">
                           {budget.name}
                         </h5>
                         <ProgressBar
@@ -127,7 +127,6 @@ export default class BudgetList extends Component {
                       </div>
                       <div className="btnDiv d-flex flex-row-reverse">
                         <button
-
                           title="Delete"
                           onClick={() => {this.setState({budgetKey: budget.id}); this.onClickClose()}}
                           className="btn btn-sm btn-outline-danger"
