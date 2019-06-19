@@ -83,7 +83,6 @@ class ApplicationViews extends Component {
 
   componentDidMount() {
     const newState = {}
-
     BudgetManager.getAll()
       .then(budgets => newState.budgets = budgets)
       .then(() => CategoryManager.getAll().then(categories => newState.categories = categories))
