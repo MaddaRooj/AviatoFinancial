@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 export default class EditBudgetModal extends Component {
   state = {
     name: this.props.budget.name,
-    originalAmtStart: this.props.budget.amtStart,
     amtStart: this.props.budget.amtStart,
+    addFunds: 0,
     amtRemaining: this.props.budget.amtRemaining,
     dateEnd: this.props.dateEnd,
     id: this.props.budget.id,
@@ -22,15 +22,15 @@ export default class EditBudgetModal extends Component {
   editBudgetObject = evt => {
     const budget = {
       name: this.state.name,
-      amtStart: this.state.amtStart,
-      amtRemaining: (parseFloat(this.state.amtRemaining) + (parseFloat(this.state.amtStart) - parseFloat(this.state.originalAmtStart))),
+      amtStart: (parseFloat(this.props.budget.amtStart) + parseFloat(this.state.addFunds)),
+      amtRemaining: (parseFloat(this.props.budget.amtRemaining) + parseFloat(this.state.addFunds)),
       dateEnd: this.state.dateEnd,
       id: this.state.id,
       userId: this.state.userId
     }
-    console.log("budget",budget)
     this.props.updateBudget(budget);
     this.props.handleEditBudgetYes();
+    this.setState({addFunds: 0})
   }
 
   render() {
@@ -49,13 +49,13 @@ export default class EditBudgetModal extends Component {
             </InputGroup>
             <InputGroup>
               <InputGroupAddon addonType="prepend">
-                <InputGroupText>Total Budget</InputGroupText>
+                <InputGroupText>Add Funds</InputGroupText>
               </InputGroupAddon>
-              <Input placeholder={this.props.budget.amtStart} type="text" required id="amtStart" onChange={this.handleFieldChange} />
+              <Input placeholder="$ 0.00" type="text" required id="addFunds" onChange={this.handleFieldChange} />
             </InputGroup>
             <InputGroup className="mt-3">
               <InputGroupAddon addonType="prepend">
-                <InputGroupText>Total Budget</InputGroupText>
+                <InputGroupText>Budget End Date</InputGroupText>
               </InputGroupAddon>
               <Input type="date" required id="dateEnd" onChange={this.handleFieldChange} />
             </InputGroup>

@@ -31,7 +31,6 @@ export default class PurchaseModal extends Component {
       budgetId: this.state.budgetId,
       userId: this.state.userId
     }
-
     this.props.addPurchase(purchase);
     this.props.updateBudget({
       id: this.props.budget.id,
