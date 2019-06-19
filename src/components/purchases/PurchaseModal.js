@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css"
 
-export default class TaskModal extends Component {
+export default class PurchaseModal extends Component {
   state = {
     description: "",
     amount: "",
     dateOfPurchase: "",
     budgetId: this.props.budget.id,
-    amtRemaining: this.props.budget.amtRemaining
+    amtRemaining: this.props.budget.amtRemaining,
+    userId: this.props.budget.userId
   };
 
   handleFieldChange = evt => {
@@ -27,7 +28,8 @@ export default class TaskModal extends Component {
       description: this.state.description,
       amount: this.state.amount,
       dateOfPurchase: formattedTime,
-      budgetId: this.state.budgetId
+      budgetId: this.state.budgetId,
+      userId: this.state.userId
     }
 
     this.props.addPurchase(purchase);
