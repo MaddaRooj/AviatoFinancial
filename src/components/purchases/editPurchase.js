@@ -52,7 +52,7 @@ export default class EditPurchaseModal extends Component {
               <InputGroupAddon addonType="prepend">
                 <InputGroupText>Edit Amount</InputGroupText>
               </InputGroupAddon>
-              <Input placeholder={this.state.prevAmount} type="text" required id="amount" onChange={this.handleFieldChange} />
+              <Input placeholder={this.props.purchaseKeyAmount} type="text" required id="amount" onChange={this.handleFieldChange} />
             </InputGroup>
           </Form>
         </ModalBody>
