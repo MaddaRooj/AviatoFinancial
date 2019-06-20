@@ -20,14 +20,18 @@ export default class PurchaseModal extends Component {
 
   constructNewPurchase = evt => {
 
-    let today = new Date();
-    let formatTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds());
-    let formattedTime = formatTime.toLocaleString("en-US", { hour12: true });
+    // let today = new Date();
+    // let formatTime = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    // let formattedTime = formatTime.toLocaleString("en-US", { hour12: true });
+
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var today = new Date();
+    var date = today.toLocaleDateString("en-US", options);
 
     const purchase = {
       description: this.state.description,
       amount: this.state.amount,
-      dateOfPurchase: formattedTime,
+      dateOfPurchase: date,
       budgetId: this.state.budgetId,
       userId: this.state.userId
     }

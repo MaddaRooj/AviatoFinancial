@@ -46,7 +46,7 @@ export const login = (email, password) => {
       return userFromJsonServer;
     })
     .catch(error => {
-      alert("problem logging in fool!")
+      alert("Incorrect username or password")
     })
 }
 

@@ -15,5 +15,14 @@ export default {
       },
       body: JSON.stringify(newPurchase)
     }).then(data => data.json())
-  }
+  },
+  editPurchase (editedPurchase) {
+    return fetch(`${remoteURL}/purchases/${editedPurchase.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedPurchase)
+    }).then(data => data.json());
+  },
 }

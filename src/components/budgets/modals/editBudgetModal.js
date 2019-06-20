@@ -49,9 +49,9 @@ export default class EditBudgetModal extends Component {
             </InputGroup>
             <InputGroup>
               <InputGroupAddon addonType="prepend">
-                <InputGroupText>Add Funds</InputGroupText>
+                <InputGroupText>Add Funds  $</InputGroupText>
               </InputGroupAddon>
-              <Input placeholder="$ 0.00" type="text" required id="addFunds" onChange={this.handleFieldChange} />
+              <Input placeholder="0.00" type="text" required id="addFunds" onChange={this.handleFieldChange} />
             </InputGroup>
             <InputGroup className="mt-3">
               <InputGroupAddon addonType="prepend">
