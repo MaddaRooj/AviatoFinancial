@@ -22,8 +22,8 @@ export default class EditBudgetModal extends Component {
   editBudgetObject = evt => {
     const budget = {
       name: this.state.name,
-      amtStart: (parseFloat(this.props.budget.amtStart) + parseFloat(this.state.addFunds)),
-      amtRemaining: (parseFloat(this.props.budget.amtRemaining) + parseFloat(this.state.addFunds)),
+      amtStart: JSON.stringify((parseFloat(this.props.budget.amtStart) + parseFloat(this.state.addFunds))),
+      amtRemaining: JSON.stringify((parseFloat(this.props.budget.amtRemaining) + parseFloat(this.state.addFunds))),
       dateEnd: this.state.dateEnd,
       id: this.state.id,
       userId: this.state.userId
