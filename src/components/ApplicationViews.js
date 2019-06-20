@@ -41,6 +41,16 @@ class ApplicationViews extends Component {
       });
   };
 
+  updatePurchase = editedPurchaseObject => {
+    const newState = {};
+    PurchaseManager.editPurchase(editedPurchaseObject)
+      .then(() => PurchaseManager.getAll())
+      .then(purchases => (newState.purchases = purchases))
+      .then(() => {
+        this.setState(newState);
+      });
+  };
+
   deleteBudget = id => {
     return fetch(`http://localhost:5002/budgets/${id}`, {
       method: "DELETE"
@@ -122,7 +132,7 @@ class ApplicationViews extends Component {
           if (!budget) {
             budget = { id: 404, name: "404" }
           }
-          return <BudgetDetail {...props} {...this.props} purchases={this.state.purchases} user={this.state.user} updateBudget={this.updateBudget} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
+          return <BudgetDetail {...props} {...this.props} purchases={this.state.purchases} user={this.state.user} updatePurchase={this.updatePurchase} updateBudget={this.updateBudget} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
             deleteBudget={this.deleteBudget} />
         }} />
       </React.Fragment>

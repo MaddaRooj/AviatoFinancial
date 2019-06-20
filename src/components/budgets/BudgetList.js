@@ -112,7 +112,7 @@ export default class BudgetList extends Component {
                         <h5 style={{fontFamily: 'EB Garamond, serif', fontSize: '1.2rem'}} className="d-flex justify-content-end">Budget End: <span className="ml-1" style={{ fontSize: '1.3rem' }}>{budget.dateEnd}</span></h5>
                       </div>
                       <div className="d-flex flex-column align-items-center">
-                        <h5 style={{ fontSize: "2rem", fontFamily: "EB Garamond, serif" }} className="card-title">
+                        <h5 style={{ fontSize: "2rem", fontFamily: "Nanum Myeongjo, serif" }} className="card-title">
                           {budget.name}
                         </h5>
                         <ProgressBar
