@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 export default class Graph extends Component {
   render() {
@@ -7,19 +7,31 @@ export default class Graph extends Component {
       <div className="graphDiv mt-4">
         <div className="d-flex flex-column justify-content-center">
           <h1 style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: '2rem' }} className="m-3 d-flex justify-content-center">
-            Your Total Spending this Week
+            Spending by Month
               </h1>
         </div>
         <div className="graph mt-4">
-          <Doughnut
+          <Bar
             className="graph"
             data={{
-              labels: this.props.categories,
+              labels: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ],
               datasets: [
                 {
                   borderColor: "black",
-                  label: "Dollars Spent",
-                  data: this.props.data,
+                  data: [1113.24, 1325.54, 1106.25, 1564.32, 1203.25, 1354.46],
                   backgroundColor: [
                     "#8A212A",
                     "#3A488F",
@@ -39,9 +51,16 @@ export default class Graph extends Component {
               ]
             }}
             options={{
-              cutoutPercentage: 65,
+              scales: {
+                yAxes: [{
+                  display: true,
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              },
               legend: {
-                position: "right"
+                display: false
               },
               tooltips: {
                 titleFontSize: 24,
@@ -55,15 +74,6 @@ export default class Graph extends Component {
                       "  $" +
                       data["datasets"][0]["data"][tooltipItem["index"]]
                     );
-                  },
-                  afterLabel: (tooltipItem, data) => {
-                    let dataset = data["datasets"][0];
-                    let percent = Math.round(
-                      (dataset["data"][tooltipItem["index"]] /
-                        this.props.total) *
-                      100
-                    );
-                    return "  (" + percent + "%)";
                   }
                 },
                 responsive: true,

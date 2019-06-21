@@ -11,6 +11,7 @@ import Home from "./home/Home"
 import Login from './auth/Login';
 import Register from './auth/Register';
 import { getUserFromLocalStorage, logout } from './auth/UserManager';
+import SearchResults from './search/Search'
 
 class ApplicationViews extends Component {
 
@@ -61,7 +62,9 @@ class ApplicationViews extends Component {
       .then(budgets => {
         this.props.history.push("/budgets");
         this.setState({ budgets: budgets })
-      })
+      }).then(() => PurchaseManager.getAll().then(purchases => {
+        this.setState({purchases: purchases})
+      }))
   }
 
   deletePurchase = id => {
@@ -135,6 +138,12 @@ class ApplicationViews extends Component {
           return <BudgetDetail {...props} {...this.props} purchases={this.state.purchases} user={this.state.user} updatePurchase={this.updatePurchase} updateBudget={this.updateBudget} deletePurchase={this.deletePurchase} addPurchase={this.addPurchase} budget={budget}
             deleteBudget={this.deleteBudget} />
         }} />
+        <Route
+          path="/search"
+          render={props => {
+            return <SearchResults {...props} searchResults={this.state.searchResults} />;
+          }}
+        />
       </React.Fragment>
     )
   }

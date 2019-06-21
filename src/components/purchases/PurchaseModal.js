@@ -9,7 +9,8 @@ export default class PurchaseModal extends Component {
     dateOfPurchase: "",
     budgetId: this.props.budget.id,
     amtRemaining: this.props.budget.amtRemaining,
-    userId: this.props.budget.userId
+    userId: this.props.budget.userId,
+    categoryId: this.props.budget.categoryId
   };
 
   handleFieldChange = evt => {
@@ -24,16 +25,17 @@ export default class PurchaseModal extends Component {
     // let formatTime = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     // let formattedTime = formatTime.toLocaleString("en-US", { hour12: true });
 
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    var today = new Date();
-    var date = today.toLocaleDateString("en-US", options);
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let today = new Date();
+    let date = today.toLocaleDateString("en-US", options);
 
     const purchase = {
       description: this.state.description,
       amount: this.state.amount,
       dateOfPurchase: date,
       budgetId: this.state.budgetId,
-      userId: this.state.userId
+      userId: this.state.userId,
+      categoryId: this.state.categoryId
     }
     this.props.addPurchase(purchase);
     this.props.updateBudget({

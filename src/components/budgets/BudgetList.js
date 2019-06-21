@@ -8,6 +8,7 @@ import "semantic-ui-css/semantic.min.css";
 import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 import DeleteBudgetModal from './modals/deleteBudgetModal'
 import Graph from '../graphs/Graph'
+import Multigraph from '../graphs/Multigraph'
 import SearchResults from '../search/Search'
 // import BudgetItem from './BudgetItem'
 
@@ -27,8 +28,7 @@ export default class BudgetList extends Component {
     const arr = [];
     const arr2 = [];
     // function variable for .reduce of purchase amounts -- will add all amounts for total
-    let reducer = (accumulator, currentValue) =>
-      parseFloat(accumulator) + parseFloat(currentValue);
+    let reducer = (accumulator, currentValue) => parseFloat(accumulator) + parseFloat(currentValue);
     // Data push
     this.props.purchases.filter(purchase => purchase.userId === this.props.user.id)
     .forEach(purchase => {
@@ -61,6 +61,7 @@ export default class BudgetList extends Component {
   handleSearch(input) {
     if (input.keyCode === 13) {
       this.props.getSearchResults(input.target.value);
+      this.props.history.push("/search");
     }
   }
 
@@ -69,6 +70,7 @@ export default class BudgetList extends Component {
   }
 
   render() {
+    console.log(new Date())
     return (
       <div className="budgetDiv">
         <div className="budgetButton d-flex justify-content-between">
@@ -87,8 +89,9 @@ export default class BudgetList extends Component {
         </div>
         <hr />
         <section className="budgets d-flex flex-row justify-content-around">
-          <Graph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total} />
-          <div className="listDiv d-flex flex-column align-items-center mt-4">
+          {/* <Graph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total} /> */}
+          <Multigraph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total}/>
+          <div className="listDiv d-flex flex-column align-items-center">
             <div className="mt-3 mb-3">
               <h1 className="budgetListHead d-flex justify-self-center" style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: "2rem" }}>Your Budgets</h1>
               <InputGroup>
@@ -99,7 +102,7 @@ export default class BudgetList extends Component {
               </InputGroup>
             </div>
             <div>
-              <SearchResults searchResults={this.props.searchResults}/>
+              {/* <SearchResults searchResults={this.props.searchResults}/> */}
             </div>
             <div className="budgetListScroll d-flex flex-column align-items-center">
               {this.props.budgets

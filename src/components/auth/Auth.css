@@ -1,6 +1,31 @@
 .auth--container{
-    margin-top: 120px;
+    margin-top: 90px;
 }
+
+.login {
+    background-image: url(unsplash-city-scape.jpg);
+    background-size: cover;
+    min-width: 100%;
+    min-height: 1000px;
+    padding-top: 100px;
+}
+.register {
+    background-image: url(unsplash-city-scape.jpg);
+    background-size: cover;
+    min-width: 100%;
+    min-height: 1000px;
+    padding-top: 100px;
+}
+
+.loginForm {
+    width: 400px;
+}
+
+.registerForm {
+    width: 500px;
+    background-color: black
+}
+
 
 /* .regBtn {
     border: 2px solid #A79344;
