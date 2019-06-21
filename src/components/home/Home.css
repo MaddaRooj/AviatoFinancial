@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
     height: 600px;
     width: 800px
 }
@@ -22,11 +22,16 @@
     align-self: center;
     align-content: center;
     font-family: 'Cinzel Decorative', cursive;
-    color: #A79344;
+    color: #C0B283;
     background-color: #3A4660;
     padding: 50px;
     margin-top: 20px;
     width: 70%;
     height: 300px;
-    border-radius: 30px
+    border-radius: 15px
+}
+
+.homeBottom {
+    height: 300px;
+    width: 90%
 }

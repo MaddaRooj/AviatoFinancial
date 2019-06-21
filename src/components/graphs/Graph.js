@@ -7,7 +7,7 @@ export default class Graph extends Component {
       <div className="graphDiv mt-4">
         <div className="d-flex flex-column justify-content-center">
           <h1 style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: '2rem' }} className="m-3 d-flex justify-content-center">
-            Your Total Spending this Week
+            Your Total Spending this Month
               </h1>
         </div>
         <div className="graph mt-4">
@@ -41,7 +41,11 @@ export default class Graph extends Component {
             options={{
               cutoutPercentage: 65,
               legend: {
-                position: "right"
+                position: "right",
+                labels: {
+                  fontSize: 12,
+                  fontFamily: "Libre Baskerville, serif"
+                }
               },
               tooltips: {
                 titleFontSize: 24,

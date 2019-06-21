@@ -3,64 +3,94 @@
     {
       "name": "Groceries",
       "amtStart": "300",
-      "amtRemaining": "86.52000000000001",
+      "amtRemaining": "131.35999999999999",
       "dateEnd": "2019-06-27",
       "categoryId": 1,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "id": 7
     },
     {
-      "name": "Addam Joor",
-      "amtStart": "200.00",
-      "amtRemaining": "54.64",
-      "dateEnd": "2019-06-27",
+      "name": "Car Repairs",
+      "amtStart": "400",
+      "amtRemaining": 125.31,
+      "dateEnd": "2019-07-04",
       "categoryId": 2,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "id": 8
+    },
+    {
+      "name": "Garden Supplies",
+      "amtStart": "150.00",
+      "amtRemaining": "65.42999999999999",
+      "dateEnd": "2019-06-29",
+      "categoryId": 5,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 9
+    },
+    {
+      "name": "Vacation",
+      "amtStart": "600.00",
+      "amtRemaining": "600.00",
+      "dateEnd": "2019-07-01",
+      "categoryId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 10
     }
   ],
   "purchases": [
     {
-      "description": "New 1",
-      "amount": "60.00",
+      "description": "Week 1 Groceries",
+      "amount": "112.23",
       "dateOfPurchase": "June 20, 2019",
       "budgetId": 7,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 16
-    },
-    {
-      "description": "Week 2",
-      "amount": "112.27",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 7,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 17
-    },
-    {
-      "description": "new",
-      "amount": "41.21",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 7,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 18
-    },
-    {
-      "description": "new",
-      "amount": "56.00",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 8,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 19
+      "categoryId": 1,
+      "id": 1
     },
     {
       "description": "Tires",
-      "amount": "89.36",
+      "amount": "212.35",
       "dateOfPurchase": "June 20, 2019",
       "budgetId": 8,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 2,
-      "id": 20
+      "id": 2
+    },
+    {
+      "description": "Oil Change/Tire Balance",
+      "amount": "62.34",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 8,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 3
+    },
+    {
+      "description": "new flowers/mulch",
+      "amount": "63.21",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 9,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 5,
+      "id": 4
+    },
+    {
+      "description": "Week 2 Groceries",
+      "amount": "56.41",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 7,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 5
+    },
+    {
+      "description": "Potting Soil",
+      "amount": "21.36",
+      "dateOfPurchase": "June 21, 2019",
+      "budgetId": 9,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 5,
+      "id": 6
     }
   ],
   "categories": [

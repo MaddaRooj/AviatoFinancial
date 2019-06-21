@@ -24,17 +24,21 @@ export default class BudgetList extends Component {
   // getData function will get all purchase amounts, push them to array, and set array as data for graphs
   getData = () => {
     const newState = {};
+    // Gets the current month in order to filter purchases
+    let options = { month: 'long' };
+    let today = new Date();
+    let date = today.toLocaleDateString("en-US", options);
     // arrays to push purchase amounts and names
     const arr = [];
     const arr2 = [];
     // function variable for .reduce of purchase amounts -- will add all amounts for total
     let reducer = (accumulator, currentValue) => parseFloat(accumulator) + parseFloat(currentValue);
     // Data push
-    this.props.purchases.filter(purchase => purchase.userId === this.props.user.id)
-    .forEach(purchase => {
-      arr.push(parseFloat(purchase.amount));
-      arr2.push(purchase.description);
-    });
+    this.props.purchases.filter(purchase => purchase.userId === this.props.user.id && purchase.dateOfPurchase.split(" ")[0] === date)
+      .forEach(purchase => {
+        arr.push(parseFloat(purchase.amount));
+        arr2.push(purchase.description);
+      });
     newState.data = arr;
     newState.categories = arr2;
     if (arr.length > 0) {
@@ -45,11 +49,11 @@ export default class BudgetList extends Component {
 
   handleClickedDeleteYes = () => {
     this.props.deleteBudget(this.state.budgetKey)
-    this.setState({modalShow: false})
+    this.setState({ modalShow: false })
   }
 
   handleClickedNo = () => {
-    this.setState({modalShow: false });
+    this.setState({ modalShow: false });
   }
 
   onClickClose = () => {
@@ -70,7 +74,10 @@ export default class BudgetList extends Component {
   }
 
   render() {
-    console.log(new Date())
+    let options = { month: 'long' };
+    let today = new Date();
+    let date = today.toLocaleDateString("en-US", options);
+    console.log('date', date)
     return (
       <div className="budgetDiv">
         <div className="budgetButton d-flex justify-content-between">
@@ -90,7 +97,7 @@ export default class BudgetList extends Component {
         <hr />
         <section className="budgets d-flex flex-row justify-content-around">
           {/* <Graph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total} /> */}
-          <Multigraph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total}/>
+          <Multigraph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total} />
           <div className="listDiv d-flex flex-column align-items-center">
             <div className="mt-3 mb-3">
               <h1 className="budgetListHead d-flex justify-self-center" style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: "2rem" }}>Your Budgets</h1>
@@ -98,7 +105,7 @@ export default class BudgetList extends Component {
                 <InputGroupAddon addonType="prepend">
                   <InputGroupText>Search budgets</InputGroupText>
                 </InputGroupAddon>
-                <Input onKeyUp={e => this.handleSearch(e)}/>
+                <Input onKeyUp={e => this.handleSearch(e)} />
               </InputGroup>
             </div>
             <div>
@@ -109,10 +116,10 @@ export default class BudgetList extends Component {
                 .filter(budget => budget.userId === this.props.user.id)
                 .map(budget => (
                   <div key={budget.id} className="mt-3">
-                  <DeleteBudgetModal toggleModal={ this.state.modalShow } handleClickYes={ this.handleClickedDeleteYes } handleClickNo={ this.handleClickedNo } />
+                    <DeleteBudgetModal toggleModal={this.state.modalShow} handleClickYes={this.handleClickedDeleteYes} handleClickNo={this.handleClickedNo} />
                     <div className="card-body">
                       <div>
-                        <h5 style={{fontFamily: 'EB Garamond, serif', fontSize: '1.2rem'}} className="d-flex justify-content-end">Budget End: <span className="ml-1" style={{ fontSize: '1.3rem' }}>{budget.dateEnd}</span></h5>
+                        <h5 style={{ fontFamily: 'EB Garamond, serif', fontSize: '1.2rem' }} className="d-flex justify-content-end">Budget End: <span className="ml-1" style={{ fontSize: '1.3rem' }}>{budget.dateEnd}</span></h5>
                       </div>
                       <div className="d-flex flex-column align-items-center">
                         <h5 style={{ fontSize: "2rem", fontFamily: "Nanum Myeongjo, serif" }} className="card-title">
@@ -131,7 +138,7 @@ export default class BudgetList extends Component {
                       <div className="btnDiv d-flex flex-row-reverse">
                         <button
                           title="Delete"
-                          onClick={() => {this.setState({budgetKey: budget.id}); this.onClickClose()}}
+                          onClick={() => { this.setState({ budgetKey: budget.id }); this.onClickClose() }}
                           className="btn btn-sm btn-outline-danger"
                         >
                           <FaTrashAlt size="14px" />

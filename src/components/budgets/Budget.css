@@ -47,7 +47,7 @@
 .card-body {
     width: 800px;
     color: #C0B283;
-    border: 3px #A79344 solid;
+    border: 3px silver solid;
     box-shadow: 2px 2px 6px 2px black;
     /* background-color: #373737; */
     background-color: #3A4660;
@@ -79,6 +79,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    font-family: "Nanum Myeongjo", "serif"
 }
 
 .budgetDetail {
