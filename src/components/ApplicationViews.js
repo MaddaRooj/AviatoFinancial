@@ -117,7 +117,7 @@ class ApplicationViews extends Component {
         }} />
         <Route exact path="/budgets" render={(props) => {
           return this.state.user ? (
-            <BudgetList {...props} searchResults={this.state.searchResults} getSearchResults={this.getSearchResults} user={this.state.user} deleteBudget={this.deleteBudget} purchases={this.state.purchases} budgets={this.state.budgets} />
+            <BudgetList {...props} addBudget={this.addBudget} categories={this.state.categories} searchResults={this.state.searchResults} getSearchResults={this.getSearchResults} user={this.state.user} deleteBudget={this.deleteBudget} purchases={this.state.purchases} budgets={this.state.budgets} />
           ) : (
               <Redirect to="/login" />
             )

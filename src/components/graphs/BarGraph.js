@@ -31,7 +31,7 @@ export default class Graph extends Component {
               datasets: [
                 {
                   borderColor: "black",
-                  data: [1113.24, 1325.54, 1106.25, 1564.32, 1203.25, 1354.46],
+                  data: [1113.24, 1325.54, 1106.25, 1564.32, 1203.25, this.props.total],
                   backgroundColor: [
                     "#8A212A",
                     "#3A488F",
@@ -72,7 +72,7 @@ export default class Graph extends Component {
                   label: function (tooltipItem, data) {
                     return (
                       "  $" +
-                      data["datasets"][0]["data"][tooltipItem["index"]]
+                      data["datasets"][0]["data"][tooltipItem["index"]].toFixed(2)
                     );
                   }
                 },
