@@ -131,8 +131,10 @@ export default class Budget extends Component {
         />
         <div key={this.props.budget.id} className="">
           <div className="card-body detail-body">
-            <h4 className="card-title">
+            <h4 style={{ fontSize: '3.5rem', fontFamily: 'Nanum Myeongjo, serif', fontWeight: 400 }} className="card-title">
               {this.props.budget.name}
+            </h4>
+            <div className="d-flex justify-content-center">
               <ProgressBar
                 animated
                 variant="success"
@@ -148,35 +150,37 @@ export default class Budget extends Component {
                   100
                 )}%`}
               />
-            </h4>
-            <div className="d-flex flex-row justify-content-around mb-5">
-              <h6 className="card-title">{`Total allotted: $${
+            </div>
+            <div className="d-flex flex-row justify-content-around mb-5 mt-5">
+              <h6 style={{fontSize: '2rem'}} className="card-title">{`Total Allotted: $${
                 this.props.budget.amtStart
                 }`}</h6>
-              <h6 className="card-title">{`Amount remaining: $${parseFloat(
+              <h6 style={{fontSize: '2rem'}} className="card-title">{`Amount Remaining: $${parseFloat(
                 this.props.budget.amtRemaining
               ).toFixed(2)}`}</h6>
+            </div>
+            <div className="d-flex flex-row justify-content-between">
               <button
                 onClick={this.onClickEditBudget}
-                className="btn btn-outline-primary"
+                className="btn btn-outline-primary ml-3"
               >
                 <FaEdit />
               </button>
-            </div>
-            <div className="d-flex flex-row-reverse">
-              <button
-                onClick={this.onClickDeleteBudget}
-                disabled={this.state.saveDisabled}
-                className="card-link btn btn-outline-danger"
-              >
-                <FaTrashAlt size="14px" />
-              </button>
-              <button
-                className="card-link btn btn-outline-primary mr-3"
-                onClick={this.onClickClose}
-              >
-                Enter Purchase <FaPlus className="ml-1"/>
-              </button>
+              <div className="mr-3">
+                <button
+                  className="card-link btn btn-outline-primary mr-3"
+                  onClick={this.onClickClose}
+                >
+                  Enter Purchase <FaPlus className="ml-1" />
+                </button>
+                <button
+                  onClick={this.onClickDeleteBudget}
+                  disabled={this.state.saveDisabled}
+                  className="card-link btn btn-outline-danger"
+                >
+                  <FaTrashAlt size="14px" />
+                </button>
+              </div>
             </div>
             <br />
             <div>

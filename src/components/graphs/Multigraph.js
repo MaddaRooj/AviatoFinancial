@@ -27,7 +27,7 @@ export default class Multigraph extends Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              This Week
+              This Month
             </NavLink>
           </NavItem>
           <NavItem>
