@@ -34,7 +34,7 @@ export default class Budget extends Component {
   // opens edit budget modal
   onClickEditBudget = () => {
     this.setState({
-      editBudgetModalShow: true
+      editBudgetModalShow: true,
     });
   };
 

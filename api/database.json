@@ -1,0 +1,150 @@
+{
+  "budgets": [
+    {
+      "name": "Groceries",
+      "amtStart": "300",
+      "amtRemaining": "86.52000000000001",
+      "dateEnd": "2019-06-27",
+      "categoryId": 1,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 7
+    },
+    {
+      "name": "Addam Joor",
+      "amtStart": "200.00",
+      "amtRemaining": "54.64",
+      "dateEnd": "2019-06-27",
+      "categoryId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 8
+    }
+  ],
+  "purchases": [
+    {
+      "description": "New 1",
+      "amount": "60.00",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 7,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 16
+    },
+    {
+      "description": "Week 2",
+      "amount": "112.27",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 7,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 17
+    },
+    {
+      "description": "new",
+      "amount": "41.21",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 7,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "id": 18
+    },
+    {
+      "description": "new",
+      "amount": "56.00",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 8,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 19
+    },
+    {
+      "description": "Tires",
+      "amount": "89.36",
+      "dateOfPurchase": "June 20, 2019",
+      "budgetId": 8,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 20
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Food - Essentials"
+    },
+    {
+      "id": 2,
+      "name": "Recreation"
+    },
+    {
+      "id": 3,
+      "name": "Vehicle"
+    },
+    {
+      "id": 4,
+      "name": "Bills"
+    },
+    {
+      "id": 5,
+      "name": "House"
+    },
+    {
+      "id": 6,
+      "name": "Food - Eating Out"
+    },
+    {
+      "id": 7,
+      "name": "General"
+    },
+    {
+      "id": 8,
+      "name": "Other"
+    }
+  ],
+  "users": [
+    {
+      "email": "addam.joor@outlook.com",
+      "username": "addam.joor",
+      "firstName": "Addam",
+      "lastName": "Joor",
+      "password": null,
+      "id": "xFuLreG3wNPIBRLbA37BbUmuQgr2"
+    },
+    {
+      "email": "new@aol.com",
+      "username": "new.user",
+      "firstName": "Newbie",
+      "lastName": "Userly",
+      "password": null,
+      "id": "M3mWRuv4brVwad3B589srsVxcYW2"
+    },
+    {
+      "email": "susan@aol.com",
+      "username": "susan.figert",
+      "password": null,
+      "firstName": "Susan",
+      "lastName": "Figert",
+      "id": "TtOq2xf43MgBAfnZwIhKBnoZlV02"
+    },
+    {
+      "email": "jimmy@aol.com",
+      "username": "jimmy.mett",
+      "password": null,
+      "firstName": "Jimmy",
+      "lastName": "Metts",
+      "id": "hwEi1fZvi6ObCrHYDKqANZ4tfEz2"
+    },
+    {
+      "email": "william@gmail.com",
+      "username": "william.rooj",
+      "password": null,
+      "firstName": "William",
+      "lastName": "Rooj",
+      "id": "0RWyRGnDqreJJloitraJzPtl7ai2"
+    },
+    {
+      "email": "madda@gmail.com",
+      "username": "Madda.rooj",
+      "password": null,
+      "firstName": "Madda",
+      "lastName": "Rooj",
+      "id": "pA7d0UNWbqfQytj5t0tZlphFAlF2"
+    }
+  ]
+}

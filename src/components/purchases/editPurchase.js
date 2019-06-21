@@ -6,11 +6,11 @@ export default class EditPurchaseModal extends Component {
   state = {
     description: '',
     amount: 0,
-    prevAmount: this.props.purchaseKeyAmount,
     amtRemaining: this.props.budget.amtRemaining,
     budgetId: this.props.budget.id,
     purchaseKey: this.props.purchaseKey,
-    purchaseKeyDesc: this.props.purchaseKeyDesc
+    purchaseKeyDesc: this.props.purchaseKeyDesc,
+    purchaseKeyAmount: this.props.purchaseKeyAmount
   };
 
   handleFieldChange = evt => {
@@ -29,9 +29,14 @@ export default class EditPurchaseModal extends Component {
         amount: this.state.amount,
         id: this.props.purchaseKey
     }
-    this.props.updateBudget(budget);
-    this.props.updatePurchase(purchase);
-    this.props.editPurchaseModalClickYes();
+    if (this.state.description !== '' && this.state.amount !== 0) {
+        this.props.updateBudget(budget);
+        this.props.updatePurchase(purchase);
+        this.props.editPurchaseModalClickYes();
+    }
+    else {
+        alert("please enter a description and amount in order to edit")
+    }
   }
 
   render() {
