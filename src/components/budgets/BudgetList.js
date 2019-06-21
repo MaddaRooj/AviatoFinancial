@@ -7,10 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
 import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 import DeleteBudgetModal from './modals/deleteBudgetModal'
-import Graph from '../graphs/Graph'
 import Multigraph from '../graphs/Multigraph'
-import SearchResults from '../search/Search'
-// import BudgetItem from './BudgetItem'
+import NewBudgetModal from './modals/newBudgetModal'
 
 export default class BudgetList extends Component {
   state = {
@@ -18,6 +16,7 @@ export default class BudgetList extends Component {
     categories: [],
     total: [],
     modalShow: false,
+    newBudgetModalShow: false,
     budgetKey: 1
   };
 
@@ -52,6 +51,14 @@ export default class BudgetList extends Component {
     this.setState({ modalShow: false })
   }
 
+  handleClickedNewBudget = () => {
+    this.setState({newBudgetModalShow: true})
+  }
+
+  handleClickedNewBudgetNo = () => {
+    this.setState({newBudgetModalShow: false})
+  }
+
   handleClickedNo = () => {
     this.setState({ modalShow: false });
   }
@@ -74,12 +81,9 @@ export default class BudgetList extends Component {
   }
 
   render() {
-    let options = { month: 'long' };
-    let today = new Date();
-    let date = today.toLocaleDateString("en-US", options);
-    console.log('date', date)
     return (
       <div className="budgetDiv">
+        <NewBudgetModal {...this.props} user={this.props.user} addBudget={this.props.addBudget} toggleModal={this.state.newBudgetModalShow} handleClickNewBudgetNo={this.handleClickedNewBudgetNo}/>
         <div className="budgetButton d-flex justify-content-between">
           <h2 style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: '2.4rem' }} className="ml-5">
             Your Financial Profile
@@ -87,16 +91,13 @@ export default class BudgetList extends Component {
           <button
             type="button"
             className="ui inverted violet button mr-5"
-            onClick={() => {
-              this.props.history.push("/budgets/new");
-            }}
+            onClick={this.handleClickedNewBudget}
           >
             Add New Budget <FaPlus className="mb-1 ml-1" />
           </button>
         </div>
         <hr />
         <section className="budgets d-flex flex-row justify-content-around">
-          {/* <Graph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total} /> */}
           <Multigraph {...this.props} categories={this.state.categories} data={this.state.data} total={this.state.total} />
           <div className="listDiv d-flex flex-column align-items-center">
             <div className="mt-3 mb-3">

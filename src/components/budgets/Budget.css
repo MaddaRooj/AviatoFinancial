@@ -55,7 +55,7 @@
 .purchase-card-body {
     width: 100%;
     color: #C0B283;
-    border: 3px #A79344 solid;
+    border: 2px silver solid;
     /* background-color: #373737; */
     background-color: #373737;
     padding: 8px;
@@ -113,7 +113,6 @@
 }
 
 .formText {
-    font-family: 'Cinzel', serif;
     color: black;
     font-size: 2.2rem;
 }

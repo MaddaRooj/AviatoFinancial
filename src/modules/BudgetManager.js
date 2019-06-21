@@ -5,7 +5,7 @@ export default {
     return fetch(`${remoteURL}/budgets/${id}`).then(e => e.json())
   },
   getAll() {
-    return fetch(`${remoteURL}/budgets`).then(e => e.json())
+    return fetch(`${remoteURL}/budgets?_sort=dateEnd&_order=asc`).then(e => e.json())
   },
   post(newBudget) {
     return fetch(`${remoteURL}/budgets`, {

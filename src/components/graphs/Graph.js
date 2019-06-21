@@ -57,7 +57,7 @@ export default class Graph extends Component {
                   label: function (tooltipItem, data) {
                     return (
                       "  $" +
-                      data["datasets"][0]["data"][tooltipItem["index"]]
+                      data["datasets"][0]["data"][tooltipItem["index"]].toFixed(2)
                     );
                   },
                   afterLabel: (tooltipItem, data) => {

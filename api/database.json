@@ -3,7 +3,7 @@
     {
       "name": "Groceries",
       "amtStart": "300",
-      "amtRemaining": "131.35999999999999",
+      "amtRemaining": "187.79999999999998",
       "dateEnd": "2019-06-27",
       "categoryId": 1,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
@@ -12,7 +12,7 @@
     {
       "name": "Car Repairs",
       "amtStart": "400",
-      "amtRemaining": 125.31,
+      "amtRemaining": "337.65999999999997",
       "dateEnd": "2019-07-04",
       "categoryId": 2,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
@@ -30,7 +30,7 @@
     {
       "name": "Vacation",
       "amtStart": "600.00",
-      "amtRemaining": "600.00",
+      "amtRemaining": "440.49",
       "dateEnd": "2019-07-01",
       "categoryId": 2,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
@@ -40,21 +40,12 @@
   "purchases": [
     {
       "description": "Week 1 Groceries",
-      "amount": "112.23",
+      "amount": "112.20",
       "dateOfPurchase": "June 20, 2019",
       "budgetId": 7,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
       "id": 1
-    },
-    {
-      "description": "Tires",
-      "amount": "212.35",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 8,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 2
     },
     {
       "description": "Oil Change/Tire Balance",
@@ -75,15 +66,6 @@
       "id": 4
     },
     {
-      "description": "Week 2 Groceries",
-      "amount": "56.41",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 7,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 1,
-      "id": 5
-    },
-    {
       "description": "Potting Soil",
       "amount": "21.36",
       "dateOfPurchase": "June 21, 2019",
@@ -91,6 +73,24 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 5,
       "id": 6
+    },
+    {
+      "description": "Bungie Jump",
+      "amount": "103.51",
+      "dateOfPurchase": "June 21, 2019",
+      "budgetId": 10,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 8
+    },
+    {
+      "description": "Gas moneys",
+      "amount": "56.00",
+      "dateOfPurchase": "June 21, 2019",
+      "budgetId": 10,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 10
     }
   ],
   "categories": [
