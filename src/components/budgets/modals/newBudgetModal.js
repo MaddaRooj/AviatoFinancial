@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, InputGroup, InputGroupAddon, InputGroupText, InputGroupButtonDropdown, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, FormGroup, Label } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, InputGroup, InputGroupAddon, InputGroupText, FormGroup } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 export default class NewBudgetModal extends Component {

@@ -3,7 +3,7 @@
     {
       "name": "Vacation",
       "amtStart": "450",
-      "amtRemaining": "205.89",
+      "amtRemaining": "407.89",
       "dateEnd": "2019-07-08",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 2,
@@ -12,7 +12,7 @@
     {
       "name": "Groceries - July",
       "amtStart": "300.00",
-      "amtRemaining": "87.69",
+      "amtRemaining": "196.35",
       "dateEnd": "2019-07-31",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
@@ -21,50 +21,23 @@
     {
       "name": "Car Maintenance",
       "amtStart": "300.00",
-      "amtRemaining": "242.11",
+      "amtRemaining": "226.47000000000003",
       "dateEnd": "2019-07-22",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 3,
       "id": 4
+    },
+    {
+      "name": "Dek's Budget 1 ",
+      "amtStart": "200.00",
+      "amtRemaining": "200",
+      "dateEnd": "2019-07-15",
+      "userId": "Jmr0HTYaLZVTOK6T5h6rSj177EI3",
+      "categoryId": 7,
+      "id": 5
     }
   ],
   "purchases": [
-    {
-      "description": "new",
-      "amount": "40.00",
-      "dateOfPurchase": "July 1, 2019",
-      "budgetId": 2,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 1
-    },
-    {
-      "description": "new2",
-      "amount": "56.00",
-      "dateOfPurchase": "July 1, 2019",
-      "budgetId": 2,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 2
-    },
-    {
-      "description": "week 1",
-      "amount": "212.31",
-      "dateOfPurchase": "July 1, 2019",
-      "budgetId": 3,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 1,
-      "id": 4
-    },
-    {
-      "description": "Tires",
-      "amount": "56.00",
-      "dateOfPurchase": "July 1, 2019",
-      "budgetId": 2,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 5
-    },
     {
       "description": "Restaurant",
       "amount": "42.11",
@@ -75,15 +48,6 @@
       "id": 6
     },
     {
-      "description": "new",
-      "amount": "50.00",
-      "dateOfPurchase": "July 1, 2019",
-      "budgetId": 2,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 7
-    },
-    {
       "description": "Oil Change/Tire Rotation",
       "amount": "57.89",
       "dateOfPurchase": "July 1, 2019",
@@ -91,6 +55,24 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 3,
       "id": 8
+    },
+    {
+      "description": "Week 1 - July",
+      "amount": "103.65",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 3,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 10
+    },
+    {
+      "description": "New air filter",
+      "amount": "15.64",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 4,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 11
     }
   ],
   "categories": [
@@ -183,6 +165,14 @@
       "firstName": "howdy",
       "lastName": "doody",
       "id": "q9V9nMT7uEe9BfTKxKN7qqDZNK33"
+    },
+    {
+      "email": "dek@gmail.com",
+      "username": "Dek.Haji",
+      "password": null,
+      "firstName": "Dek",
+      "lastName": "Haji",
+      "id": "Jmr0HTYaLZVTOK6T5h6rSj177EI3"
     }
   ],
   "messages": [
@@ -220,6 +210,13 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "dateTime": "6/30/2019, 8:39:55 PM",
       "id": 6
+    },
+    {
+      "body": "Actually, with backend starting I definitely don't have time for all that jazz...",
+      "userName": "addam.joor",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "dateTime": "7/1/2019, 1:19:26 PM",
+      "id": 7
     }
   ]
 }
