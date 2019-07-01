@@ -1,35 +1,16 @@
 {
   "budgets": [
     {
-      "name": "Vacation",
-      "amtStart": "700",
-      "amtRemaining": "497.36",
-      "dateEnd": "2019-07-01",
-      "categoryId": 2,
+      "name": "Groceries",
+      "amtStart": "300.00",
+      "amtRemaining": "300.00",
+      "dateEnd": "2019-07-28",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 10
-    }
-  ],
-  "purchases": [
-    {
-      "description": "Gas Moneeys",
-      "amount": "56.00",
-      "dateOfPurchase": "June 30, 2019",
-      "budgetId": 10,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
+      "categoryId": 1,
       "id": 1
-    },
-    {
-      "description": "Scuba trip",
-      "amount": "146.64",
-      "dateOfPurchase": "June 30, 2019",
-      "budgetId": 10,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 2
     }
   ],
+  "purchases": [],
   "categories": [
     {
       "id": 1,
