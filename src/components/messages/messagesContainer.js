@@ -5,18 +5,16 @@ import MessageInput from "./input";
 import "./messages.css";
 
 export default class MessagesContainer extends Component {
-  render () {
+  render() {
     return (
       <section className="messagesSection">
-        <h1 className="chatHeader">Nutshell Chat</h1>
-
-        {/* <MessageEditModal header={"Edit Task?"} toggleModal={this.state.modalShow} handleClickYes={this.handleClickedEdit} handleClickNo={this.handleClickedNo}/> */ }
-
+        <h1 style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: '2.4rem' }} className="chatHeader">Aviato Financial Investor Chat</h1>
+        <hr />
         <div className="messageContainer">
-          <MessageList { ...this.props } user={ this.props.user } messages={ this.props.messages } />
+          <MessageList {...this.props} user={this.props.user} messages={this.props.messages} />
         </div>
         <div className="messageInput">
-          <MessageInput { ...this.props } user={ this.props.user } addMessage={ this.props.addMessage } />
+          <MessageInput {...this.props} user={this.props.user} addMessage={this.props.addMessage} />
         </div>
       </section>
     );

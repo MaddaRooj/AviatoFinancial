@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'semantic-ui-react';
-import {FaAviato} from 'react-icons/fa'
+// import {FaAviato} from 'react-icons/fa'
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'semantic-ui-css/semantic.min.css'
@@ -27,7 +27,7 @@ export default class Home extends Component {
         <div className="homeBottom d-flex flex-row justify-content-around mt-5 pt-5">
           <div className="d-flex flex-column pl-3" >
             <h2>Chat with a community of Investors!</h2>
-            {/* <h4>Coming in version 2.0</h4> */}
+            <h4>Have questions about investing, budgeting or finances in general?</h4>
             <h4>Engage with and learn from other investors.</h4>
             <h4>We will do our best to keep the trolls from bludgeoning you to death. </h4>
           </div>

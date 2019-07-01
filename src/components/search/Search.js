@@ -10,7 +10,7 @@ class SearchResults extends Component {
     if(this.props.searchResults) {
       return (
         <section className="searchResults">
-          <h1 className="d-flex justify-content-center">Search Results</h1>
+          <h1 style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: '2.4rem' }} className="d-flex justify-content-center">Search Results</h1>
           {this.props.searchResults.map(result => (
             <div key={result.id} className="d-flex justify-content-center mt-5">
               <div className="card-body-search">

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
+// import { FaEdit } from "react-icons/fa";
 
 class MessageItem extends Component {
   state = {
