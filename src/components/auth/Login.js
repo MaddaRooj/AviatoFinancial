@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Button, Container, Grid, Segment, Header, Message } from 'semantic-ui-react';
+import { Form, Button, Segment, Header, Message } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { login } from './UserManager';
-import {FaAviato} from "react-icons/fa"
 import 'semantic-ui-css/semantic.min.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Auth.css"

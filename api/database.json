@@ -1,16 +1,98 @@
 {
   "budgets": [
     {
-      "name": "Groceries",
+      "name": "Vacation",
+      "amtStart": "450",
+      "amtRemaining": "205.89",
+      "dateEnd": "2019-07-08",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 2
+    },
+    {
+      "name": "Groceries - July",
       "amtStart": "300.00",
-      "amtRemaining": "300.00",
-      "dateEnd": "2019-07-28",
+      "amtRemaining": "87.69",
+      "dateEnd": "2019-07-31",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
-      "id": 1
+      "id": 3
+    },
+    {
+      "name": "Car Maintenance",
+      "amtStart": "300.00",
+      "amtRemaining": "242.11",
+      "dateEnd": "2019-07-22",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 4
     }
   ],
-  "purchases": [],
+  "purchases": [
+    {
+      "description": "new",
+      "amount": "40.00",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 1
+    },
+    {
+      "description": "new2",
+      "amount": "56.00",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 2
+    },
+    {
+      "description": "week 1",
+      "amount": "212.31",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 3,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 4
+    },
+    {
+      "description": "Tires",
+      "amount": "56.00",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 5
+    },
+    {
+      "description": "Restaurant",
+      "amount": "42.11",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 6
+    },
+    {
+      "description": "new",
+      "amount": "50.00",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 2,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 7
+    },
+    {
+      "description": "Oil Change/Tire Rotation",
+      "amount": "57.89",
+      "dateOfPurchase": "July 1, 2019",
+      "budgetId": 4,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 8
+    }
+  ],
   "categories": [
     {
       "id": 1,
