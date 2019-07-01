@@ -23,6 +23,10 @@ This purpose of this application is to aid the user in managing and tracking the
 7. Bootstrap
 8. Chart.js
 
+## Stock Market Ticker Tape
+
+The awesome ticker tape in the footer of my project is a widget produced by tradingview.com
+https://www.tradingview.com/widget/
 
 ## Available Scripts
 
