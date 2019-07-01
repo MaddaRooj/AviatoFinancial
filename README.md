@@ -7,7 +7,7 @@ This purpose of this application is to aid the user in managing and tracking the
   * Start New Project
   * Click the </> icon under "Get started by adding Firebase to your app"
   * Name your app to get access to you Firebase SDK
-  * Navigate to the config.TEMPLATE.js and input your information
+  * Navigate to the configTemplate.js and input your information
 2. Open your terminal, navigate to the directory you would like to save this project, and run the command ```git clone git@github.com:MaddaRooj/AviatoFinancial.git```
 1. Run ```npm install``` to git all the node dependencies
 1. Navigate to the API folder to start the JSON server on port 5002
