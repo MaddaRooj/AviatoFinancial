@@ -31,13 +31,13 @@ export default class Graph extends Component {
               datasets: [
                 {
                   borderColor: "black",
-                  data: [1113.24, 1325.54, 1106.25, 1564.32, 1203.25, this.props.total],
+                  data: [1113.24, 1325.54, 1106.25, 1564.32, 1203.25, 1306.54, this.props.total],
                   backgroundColor: [
                     "#8A212A",
                     "#3A488F",
                     "#EB9AFF",
                     "#81F0AA",
-                    "#FC1653",
+                    "#93A3BC",
                     "#2274A5",
                     "#37505C",
                     "#F76F8E",

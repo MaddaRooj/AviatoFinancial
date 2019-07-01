@@ -25,16 +25,17 @@ export default class Graph extends Component {
                     "#3A488F",
                     "#EB9AFF",
                     "#81F0AA",
-                    "#FC1653",
+                    "#93A3BC",
                     "#2274A5",
-                    "#37505C",
+                    "#F3A738",
                     "#F76F8E",
                     "#89A6FB",
                     "#548687",
                     "#FCAA67",
-                    "#5CF64A"
+                    "#5CF64A",
+                    "#909CC2",
+                    "#610345"
                   ]
-                  // hoverBackgroundColor: ["#8A212F", "#3A4880", "#EB9FFF", "#81F099"]
                 }
               ]
             }}

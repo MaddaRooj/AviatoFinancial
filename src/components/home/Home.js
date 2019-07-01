@@ -27,7 +27,7 @@ export default class Home extends Component {
         <div className="homeBottom d-flex flex-row justify-content-around mt-5 pt-5">
           <div className="d-flex flex-column pl-3" >
             <h2>Chat with a community of Investors!</h2>
-            <h4>Coming in version 2.0</h4>
+            {/* <h4>Coming in version 2.0</h4> */}
             <h4>Engage with and learn from other investors.</h4>
             <h4>We will do our best to keep the trolls from bludgeoning you to death. </h4>
           </div>
@@ -35,6 +35,7 @@ export default class Home extends Component {
           <div className="d-flex flex-column pl-3">
             <h2>Begin your Journey to Prosperity</h2>
             <h4>Create budgets to track your spending habits.</h4>
+            <h4>Always know, at a glance, where your money is going.</h4>
             <Button content="Get Started!" className="ui inverted blue button mt-5" onClick={()=>this.props.history.push('./budgets')} />
           </div>
           <div style={{borderRight: '1px solid lightgrey'}}></div>

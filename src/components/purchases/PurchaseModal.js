@@ -37,12 +37,17 @@ export default class PurchaseModal extends Component {
       userId: this.state.userId,
       categoryId: this.state.categoryId
     }
-    this.props.addPurchase(purchase);
-    this.props.updateBudget({
-      id: this.props.budget.id,
-      amtRemaining: JSON.stringify(this.props.budget.amtRemaining - purchase.amount)
-    })
-    this.props.handleClickYes();
+    if (parseFloat(this.props.budget.amtRemaining) >= parseFloat(purchase.amount)){
+      this.props.addPurchase(purchase);
+      this.props.updateBudget({
+        id: this.props.budget.id,
+        amtRemaining: JSON.stringify(this.props.budget.amtRemaining - purchase.amount)
+      })
+      this.props.handleClickYes();
+    }
+    else {
+      alert('Sorry, you do not have the funds required for this purchase.')
+    }
   }
 
   render() {
