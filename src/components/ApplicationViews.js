@@ -3,6 +3,8 @@ import React, { Component } from "react"
 import { withRouter } from 'react-router'
 import BudgetList from './budgets/BudgetList'
 import BudgetManager from "../modules/BudgetManager"
+import MessageManager from '../modules/MessageManager'
+import MessagesContainer from './messages/messagesContainer'
 import BudgetDetail from "./budgets/BudgetDetail"
 import BudgetForm from "./budgets/BudgetForm"
 import CategoryManager from "../modules/CategoryManager"
@@ -12,6 +14,7 @@ import Login from './auth/Login';
 import Register from './auth/Register';
 import { getUserFromLocalStorage, logout } from './auth/UserManager';
 import SearchResults from './search/Search'
+// import MessageManager from '../modules/MessageManager';
 
 class ApplicationViews extends Component {
 
@@ -19,9 +22,45 @@ class ApplicationViews extends Component {
     budgets: [],
     categories: [],
     purchases: [],
+    messages: [],
     searchResults: [],
     user: getUserFromLocalStorage()
   }
+
+  deleteMessage = id => {
+    const newState = {};
+    MessageManager.deleteMessage(id)
+      .then(MessageManager.getAllMessages)
+      .then(chatMessages => (newState.messages = chatMessages))
+      .then(() => {
+        this.props.history.push("/messages");
+        this.setState(newState);
+      });
+  };
+
+  addMessage = message => {
+    const newState = {};
+    return MessageManager.postMessage(message)
+      .then(() => MessageManager.getAllMessages())
+      .then(chatMessages => (newState.messages = chatMessages))
+      .then(chatMessages => {
+        this.props.history.push("/messages");
+        this.setState(newState);
+        //return chatMessagess so it can be used in the form
+        return chatMessages;
+      });
+  };
+
+  updateMessage = editedMessageObject => {
+    const newState = {};
+    MessageManager.editMessage(editedMessageObject)
+      .then(() => MessageManager.getAllMessages())
+      .then(chatMessages => (newState.messages = chatMessages))
+      .then(() => {
+        this.props.history.push("/messages");
+        this.setState(newState);
+      });
+  };
 
   addBudget = budget =>
     BudgetManager.post(budget)
@@ -100,6 +139,7 @@ class ApplicationViews extends Component {
       .then(budgets => newState.budgets = budgets)
       .then(() => CategoryManager.getAll().then(categories => newState.categories = categories))
       .then(() => PurchaseManager.getAll().then(purchases => newState.purchases = purchases))
+      .then(() => MessageManager.getAllMessages().then(messages => newState.messages = messages))
       .then(() => this.setState(newState));
   }
 
@@ -144,6 +184,13 @@ class ApplicationViews extends Component {
             return <SearchResults {...props} searchResults={this.state.searchResults} />;
           }}
         />
+        <Route exact path="/messages" render={(props) => {
+          return this.state.user ? (
+            <MessagesContainer {...props} user={this.state.user} messages={this.state.messages} deleteMessage={ this.deleteMessage } addMessage={ this.addMessage } />
+          ) : (
+              <Redirect to="/login" />
+            )
+        }} />
       </React.Fragment>
     )
   }
