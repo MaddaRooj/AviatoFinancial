@@ -2,97 +2,15 @@
   "budgets": [
     {
       "name": "Groceries",
-      "amtStart": "300",
-      "amtRemaining": "187.79999999999998",
-      "dateEnd": "2019-06-27",
-      "categoryId": 1,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 7
-    },
-    {
-      "name": "Car Repairs",
-      "amtStart": "400",
-      "amtRemaining": "337.65999999999997",
-      "dateEnd": "2019-07-04",
-      "categoryId": 2,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 8
-    },
-    {
-      "name": "Garden Supplies",
-      "amtStart": "150.00",
-      "amtRemaining": "65.42999999999999",
-      "dateEnd": "2019-06-29",
-      "categoryId": 5,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 9
-    },
-    {
-      "name": "Vacation",
-      "amtStart": "600.00",
-      "amtRemaining": "440.49",
-      "dateEnd": "2019-07-01",
-      "categoryId": 2,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "id": 10
-    }
-  ],
-  "purchases": [
-    {
-      "description": "Week 1 Groceries",
-      "amount": "112.20",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 7,
+      "amtStart": "300.00",
+      "amtRemaining": "300.00",
+      "dateEnd": "2019-07-28",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
       "id": 1
-    },
-    {
-      "description": "Oil Change/Tire Balance",
-      "amount": "62.34",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 8,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 3
-    },
-    {
-      "description": "new flowers/mulch",
-      "amount": "63.21",
-      "dateOfPurchase": "June 20, 2019",
-      "budgetId": 9,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 5,
-      "id": 4
-    },
-    {
-      "description": "Potting Soil",
-      "amount": "21.36",
-      "dateOfPurchase": "June 21, 2019",
-      "budgetId": 9,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 5,
-      "id": 6
-    },
-    {
-      "description": "Bungie Jump",
-      "amount": "103.51",
-      "dateOfPurchase": "June 21, 2019",
-      "budgetId": 10,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 8
-    },
-    {
-      "description": "Gas moneys",
-      "amount": "56.00",
-      "dateOfPurchase": "June 21, 2019",
-      "budgetId": 10,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 10
     }
   ],
+  "purchases": [],
   "categories": [
     {
       "id": 1,
@@ -175,6 +93,51 @@
       "firstName": "Madda",
       "lastName": "Rooj",
       "id": "pA7d0UNWbqfQytj5t0tZlphFAlF2"
+    },
+    {
+      "email": "howdy@gmail.com",
+      "username": "howdy.doody",
+      "password": null,
+      "firstName": "howdy",
+      "lastName": "doody",
+      "id": "q9V9nMT7uEe9BfTKxKN7qqDZNK33"
+    }
+  ],
+  "messages": [
+    {
+      "body": "Hello World!",
+      "userName": "addam.joor",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "dateTime": "6/30/2019, 8:16:41 PM",
+      "id": 2
+    },
+    {
+      "body": "Please teach me how to do the fancy gambling!",
+      "userName": "addam.joor",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "dateTime": "6/30/2019, 8:24:57 PM",
+      "id": 3
+    },
+    {
+      "body": "Hello Addam, fancy gambling has a bit of a learning curve.",
+      "userName": "Madda.rooj",
+      "userId": "pA7d0UNWbqfQytj5t0tZlphFAlF2",
+      "dateTime": "6/30/2019, 8:27:48 PM",
+      "id": 4
+    },
+    {
+      "body": "It involves a lot of research and tracking trends over time.",
+      "userName": "Madda.rooj",
+      "userId": "pA7d0UNWbqfQytj5t0tZlphFAlF2",
+      "dateTime": "6/30/2019, 8:30:11 PM",
+      "id": 5
+    },
+    {
+      "body": "Oh man, I don't know if I have the time for all this jazz.",
+      "userName": "addam.joor",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "dateTime": "6/30/2019, 8:39:55 PM",
+      "id": 6
     }
   ]
 }

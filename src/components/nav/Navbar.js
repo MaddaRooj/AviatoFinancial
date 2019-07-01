@@ -20,7 +20,7 @@ class NavBar extends Component {
                         <Link className="nav-link" to="/budgets">Profile</Link>
                     </li>
                     <li className="nav-item mr-4">
-                        <Link className="nav-link" to="/budgets">Investor Chat</Link>
+                        <Link className="nav-link" to="/messages">Investor Chat</Link>
                     </li>
                     <li className="nav-item mr-4">
                         <Link className="nav-link" to="/budgets">Stocks</Link>
