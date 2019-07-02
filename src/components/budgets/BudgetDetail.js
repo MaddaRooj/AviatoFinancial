@@ -103,6 +103,7 @@ export default class Budget extends Component {
   };
 
   render() {
+    // console.log("budget month", this.props.budget.dateEnd.split("-")[1])
     return (
       <section className="budgetDetail d-flex justify-content-center">
         <EditBudgetModal

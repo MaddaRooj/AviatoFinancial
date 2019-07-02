@@ -1,18 +1,9 @@
 {
   "budgets": [
     {
-      "name": "Vacation",
-      "amtStart": "450",
-      "amtRemaining": "407.89",
-      "dateEnd": "2019-07-08",
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
-      "id": 2
-    },
-    {
       "name": "Groceries - July",
       "amtStart": "300.00",
-      "amtRemaining": "196.35",
+      "amtRemaining": "195.47",
       "dateEnd": "2019-07-31",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
@@ -20,9 +11,9 @@
     },
     {
       "name": "Car Maintenance",
-      "amtStart": "300.00",
-      "amtRemaining": "226.47000000000003",
-      "dateEnd": "2019-07-22",
+      "amtStart": "300",
+      "amtRemaining": "194.51999999999998",
+      "dateEnd": "2019-07-31",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 3,
       "id": 4
@@ -35,21 +26,93 @@
       "userId": "Jmr0HTYaLZVTOK6T5h6rSj177EI3",
       "categoryId": 7,
       "id": 5
+    },
+    {
+      "name": "test",
+      "amtStart": "200.00",
+      "amtRemaining": "200.00",
+      "dateEnd": "2019-06-04",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 8,
+      "id": 6
+    },
+    {
+      "name": "Groceries - June",
+      "amtStart": "200.00",
+      "amtRemaining": "5.090000000000003",
+      "dateEnd": "2019-06-30",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 7
+    },
+    {
+      "name": "Groceries - May",
+      "amtStart": "300.00",
+      "amtRemaining": "6.799999999999997",
+      "dateEnd": "2019-05-30",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 8
     }
   ],
   "purchases": [
     {
-      "description": "Restaurant",
-      "amount": "42.11",
+      "description": "Week 1 - July Groceries",
+      "amount": "104.53",
       "dateOfPurchase": "July 1, 2019",
-      "budgetId": 2,
+      "budgetId": 3,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 2,
+      "categoryId": 1,
+      "id": 1
+    },
+    {
+      "description": "Week 1 - June Groceries",
+      "amount": "89.34",
+      "dateOfPurchase": "June 1, 2019",
+      "budgetId": 7,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 3
+    },
+    {
+      "description": "Week 3 - June Groceries",
+      "amount": "105.57",
+      "dateOfPurchase": "June 21, 2019",
+      "budgetId": 7,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 4
+    },
+    {
+      "description": "Week 1 - May Groceries",
+      "amount": "102.36",
+      "dateOfPurchase": "May 4, 2019",
+      "budgetId": 8,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 5
+    },
+    {
+      "description": "Week 3 - May Groceries",
+      "amount": "125.63",
+      "dateOfPurchase": "May 19, 2019",
+      "budgetId": 8,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
       "id": 6
     },
     {
-      "description": "Oil Change/Tire Rotation",
-      "amount": "57.89",
+      "description": "Week 4 - May Groceries",
+      "amount": "65.21",
+      "dateOfPurchase": "May 29, 2019",
+      "budgetId": 8,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 7
+    },
+    {
+      "description": "Oil Change/Air Filter",
+      "amount": "49.27",
       "dateOfPurchase": "July 1, 2019",
       "budgetId": 4,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
@@ -57,22 +120,13 @@
       "id": 8
     },
     {
-      "description": "Week 1 - July",
-      "amount": "103.65",
-      "dateOfPurchase": "July 1, 2019",
-      "budgetId": 3,
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "categoryId": 1,
-      "id": 10
-    },
-    {
-      "description": "New air filter",
-      "amount": "15.64",
+      "description": "Tire Rotation/Balance",
+      "amount": "56.21",
       "dateOfPurchase": "July 1, 2019",
       "budgetId": 4,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 3,
-      "id": 11
+      "id": 9
     }
   ],
   "categories": [
@@ -203,13 +257,6 @@
       "userId": "pA7d0UNWbqfQytj5t0tZlphFAlF2",
       "dateTime": "6/30/2019, 8:30:11 PM",
       "id": 5
-    },
-    {
-      "body": "Oh man, I don't know if I have the time for all this jazz.",
-      "userName": "addam.joor",
-      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
-      "dateTime": "6/30/2019, 8:39:55 PM",
-      "id": 6
     },
     {
       "body": "Actually, with backend starting I definitely don't have time for all that jazz...",
