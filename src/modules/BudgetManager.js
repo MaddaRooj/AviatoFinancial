@@ -26,6 +26,6 @@ export default {
     }).then(data => data.json());
   },
   search(input) {
-    return fetch(`${remoteURL}/budgets?name_like=${input}`).then(e => e.json());
+    return fetch(`${remoteURL}/budgets?name_like=${input}&_sort=dateEnd&_order=asc`).then(e => e.json());
   }
 }

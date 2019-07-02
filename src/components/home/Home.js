@@ -35,13 +35,14 @@ export default class Home extends Component {
           <div className="d-flex flex-column pl-3">
             <h2>Begin your Journey to Prosperity</h2>
             <h4>Create budgets to track your spending habits.</h4>
-            <h4>Always know, at a glance, where your money is going.</h4>
+            <h4>Plan out your fiscal month by analyzing past spending.</h4>
             <Button content="Get Started!" className="ui inverted blue button mt-5" onClick={()=>this.props.history.push('./budgets')} />
           </div>
           <div style={{borderRight: '1px solid lightgrey'}}></div>
           <div className="d-flex flex-column pl-3 pr-3">
             <h2>Explore Up to Date Stock Info</h2>
             <h4>Coming in version 2.0</h4>
+            <h4>Get up to date market conditions for stocks you own.</h4>
           </div>
         </div>
         </div>
