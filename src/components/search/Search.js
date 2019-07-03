@@ -11,7 +11,7 @@ class SearchResults extends Component {
       return (
         <section className="searchResults">
           <h1 style={{ fontFamily: "Nanum Myeongjo, serif", fontSize: '2.4rem' }} className="d-flex justify-content-center">Search Results</h1>
-          {this.props.searchResults.map(result => (
+          {this.props.searchResults.filter(result => result.userId === this.props.user.id).map(result => (
             <div key={result.id} className="d-flex justify-content-center mt-5">
               <div className="card-body-search">
                 <div>

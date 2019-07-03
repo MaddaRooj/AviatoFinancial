@@ -33,7 +33,7 @@ export default class Home extends Component {
           </div>
           <div style={{borderRight: '1px solid lightgrey'}}></div>
           <div className="d-flex flex-column pl-3">
-            <h2>Begin your Journey to Prosperity</h2>
+            <h2>Know the past to plan for the future.</h2>
             <h4>Create budgets to track your spending habits.</h4>
             <h4>Plan out your fiscal month by analyzing past spending.</h4>
             <Button content="Get Started!" className="ui inverted blue button mt-5" onClick={()=>this.props.history.push('./budgets')} />

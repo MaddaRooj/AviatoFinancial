@@ -181,7 +181,7 @@ class ApplicationViews extends Component {
         <Route
           path="/search"
           render={props => {
-            return <SearchResults {...props} searchResults={this.state.searchResults} />;
+            return <SearchResults {...props} user={this.state.user} searchResults={this.state.searchResults} />;
           }}
         />
         <Route exact path="/messages" render={(props) => {
