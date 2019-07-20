@@ -27,16 +27,6 @@ class ApplicationViews extends Component {
     user: getUserFromLocalStorage()
   }
 
-  deleteMessage = id => {
-    const newState = {};
-    MessageManager.deleteMessage(id)
-      .then(MessageManager.getAllMessages)
-      .then(chatMessages => (newState.messages = chatMessages))
-      .then(() => {
-        this.props.history.push("/messages");
-        this.setState(newState);
-      });
-  };
 
   addMessage = message => {
     const newState = {};
@@ -55,6 +45,17 @@ class ApplicationViews extends Component {
     const newState = {};
     MessageManager.editMessage(editedMessageObject)
       .then(() => MessageManager.getAllMessages())
+      .then(chatMessages => (newState.messages = chatMessages))
+      .then(() => {
+        this.props.history.push("/messages");
+        this.setState(newState);
+      });
+  };
+
+  deleteMessage = id => {
+    const newState = {};
+    MessageManager.deleteMessage(id)
+      .then(MessageManager.getAllMessages)
       .then(chatMessages => (newState.messages = chatMessages))
       .then(() => {
         this.props.history.push("/messages");
@@ -81,16 +82,6 @@ class ApplicationViews extends Component {
       });
   };
 
-  updatePurchase = editedPurchaseObject => {
-    const newState = {};
-    PurchaseManager.editPurchase(editedPurchaseObject)
-      .then(() => PurchaseManager.getAll())
-      .then(purchases => (newState.purchases = purchases))
-      .then(() => {
-        this.setState(newState);
-      });
-  };
-
   deleteBudget = id => {
     return fetch(`http://localhost:5002/budgets/${id}`, {
       method: "DELETE"
@@ -102,9 +93,28 @@ class ApplicationViews extends Component {
         this.props.history.push("/budgets");
         this.setState({ budgets: budgets })
       }).then(() => PurchaseManager.getAll().then(purchases => {
-        this.setState({purchases: purchases})
+        this.setState({ purchases: purchases })
       }))
   }
+
+  addPurchase = purchase =>
+    PurchaseManager.post(purchase)
+      .then(() => PurchaseManager.getAll())
+      .then(purchases =>
+        this.setState({
+          purchases: purchases
+        })
+      );
+
+  updatePurchase = editedPurchaseObject => {
+    const newState = {};
+    PurchaseManager.editPurchase(editedPurchaseObject)
+      .then(() => PurchaseManager.getAll())
+      .then(purchases => (newState.purchases = purchases))
+      .then(() => {
+        this.setState(newState);
+      });
+  };
 
   deletePurchase = id => {
     return fetch(`http://localhost:5002/purchases/${id}`, {
@@ -117,15 +127,6 @@ class ApplicationViews extends Component {
         this.setState({ purchases: purchases })
       })
   }
-
-  addPurchase = purchase =>
-    PurchaseManager.post(purchase)
-      .then(() => PurchaseManager.getAll())
-      .then(purchases =>
-        this.setState({
-          purchases: purchases
-        })
-      );
 
   getSearchResults = input => {
     BudgetManager.search(input).then(results => {
@@ -186,7 +187,7 @@ class ApplicationViews extends Component {
         />
         <Route exact path="/messages" render={(props) => {
           return this.state.user ? (
-            <MessagesContainer {...props} user={this.state.user} messages={this.state.messages} deleteMessage={ this.deleteMessage } addMessage={ this.addMessage } />
+            <MessagesContainer {...props} user={this.state.user} messages={this.state.messages} deleteMessage={this.deleteMessage} addMessage={this.addMessage} />
           ) : (
               <Redirect to="/login" />
             )
