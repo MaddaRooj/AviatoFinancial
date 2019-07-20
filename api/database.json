@@ -12,7 +12,7 @@
     {
       "name": "Car Maintenance",
       "amtStart": "300",
-      "amtRemaining": "194.51999999999998",
+      "amtRemaining": 211.63,
       "dateEnd": "2019-07-31",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 3,
@@ -53,6 +53,15 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
       "id": 8
+    },
+    {
+      "name": "Finished Capstone Celebration",
+      "amtStart": "150.00",
+      "amtRemaining": "150",
+      "dateEnd": "2019-07-07",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 2,
+      "id": 9
     }
   ],
   "purchases": [
@@ -111,8 +120,8 @@
       "id": 7
     },
     {
-      "description": "Oil Change/Air Filter",
-      "amount": "49.27",
+      "description": "Oil Change",
+      "amount": "32.16",
       "dateOfPurchase": "July 1, 2019",
       "budgetId": 4,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
