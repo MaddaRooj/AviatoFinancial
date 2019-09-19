@@ -66,7 +66,7 @@
     {
       "name": "Groceries - September",
       "amtStart": "1000",
-      "amtRemaining": "843.6800000000001",
+      "amtRemaining": "659.8200000000002",
       "dateEnd": "2019-09-30",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
@@ -154,6 +154,24 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
       "id": 10
+    },
+    {
+      "description": "Week 2",
+      "amount": "96.32",
+      "dateOfPurchase": "September 19, 2019",
+      "budgetId": 10,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 11
+    },
+    {
+      "description": "Week 3",
+      "amount": "87.54",
+      "dateOfPurchase": "September 19, 2019",
+      "budgetId": 10,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 12
     }
   ],
   "categories": [
