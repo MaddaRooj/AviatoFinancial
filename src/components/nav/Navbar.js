@@ -28,12 +28,12 @@ class NavBar extends Component {
             <li className="nav-item mr-4">
               <Link className="nav-link" to="/budgets">Profile</Link>
             </li>
-            <li className="nav-item mr-4">
+            {/* <li className="nav-item mr-4">
               <Link className="nav-link" to="/messages">Investor Chat</Link>
-            </li>
-            <li className="nav-item mr-4">
+            </li> */}
+            {/* <li className="nav-item mr-4">
               <Link className="nav-link" to="/budgets">Stocks</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" onClick={() => localStorage.clear()} to="/login">Logout</Link>
             </li>
