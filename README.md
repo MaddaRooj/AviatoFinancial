@@ -1,6 +1,8 @@
 # Aviato Financial - Your personal Financial Advisor
 This purpose of this application is to aid the user in managing and tracking their finances. User will be able to create budgets and then track all the purchases made from the respective budget. All purchases will be displayed in a graph on the user's financial profile for easy, quick analysis. 
 
+![AviatoFinancial](https://user-images.githubusercontent.com/38664958/65908328-d9782600-e38b-11e9-95d0-da40e7599833.png)
+
 ## To Get Started
 1. Create your own Firebase Project
   * [Google Console](https://console.firebase.google.com/)
