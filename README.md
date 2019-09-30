@@ -4,7 +4,7 @@ This purpose of this application is to aid the user in managing and tracking the
 ![AviatoFinancial](https://user-images.githubusercontent.com/38664958/65908606-658a4d80-e38c-11e9-939c-f67af1674ebd.png)
 
 
-![AviatoFinancial](https://user-images.githubusercontent.com/38664958/65908328-d9782600-e38b-11e9-95d0-da40e7599833.png)
+![AviatoFinancial](https://user-images.githubusercontent.com/38664958/65908739-ac784300-e38c-11e9-8742-2d510249b450.png)
 
 ## To Get Started
 1. Create your own Firebase Project
