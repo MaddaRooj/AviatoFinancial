@@ -113,7 +113,7 @@ export default class BudgetList extends Component {
             </div>
             <div className="budgetListScroll d-flex flex-column align-items-center">
               {this.props.budgets
-                .filter(budget => budget.userId === this.props.user.id && budget.dateEnd.split("-")[1] === "10")
+                .filter(budget => budget.userId === this.props.user.id && parseInt(budget.dateEnd.split("-")[1]) === new Date().getMonth() + 1)
                 .map(budget => (
                   <div key={budget.id} className="mt-3">
                     <DeleteBudgetModal toggleModal={this.state.modalShow} handleClickYes={this.handleClickedDeleteYes} handleClickNo={this.handleClickedNo} />
