@@ -33,9 +33,9 @@ export default class Home extends Component {
           </div> */}
           {/* <div style={{borderRight: '1px solid lightgrey'}}></div> */}
           <div className="d-flex align-items-center flex-column pl-3">
-            <h2>Know the past to plan for the future.</h2>
-            <h4>Create budgets to track your spending habits.</h4>
-            <h4>Plan out your fiscal month by analyzing past spending.</h4>
+            <h2 style={{fontSize: '40px', fontFamily: "Nanum Myeongjo, serif"}}>Know the past to plan for the future.</h2>
+            <h4 style={{fontSize: '24px', fontFamily: "Nanum Myeongjo, serif"}}>Create budgets to track your spending habits.</h4>
+            <h4 style={{fontSize: '24px', fontFamily: "Nanum Myeongjo, serif"}}>Plan out your fiscal month by analyzing past spending.</h4>
             <Button content="Get Started!" className="ui inverted blue button mt-5" onClick={()=>this.props.history.push('./budgets')} />
           </div>
           {/* <div style={{borderRight: '1px solid lightgrey'}}></div> */}
