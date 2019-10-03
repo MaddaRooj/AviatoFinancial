@@ -66,11 +66,29 @@
     {
       "name": "Groceries - September",
       "amtStart": "1000",
-      "amtRemaining": "843.6800000000001",
+      "amtRemaining": "745.6",
       "dateEnd": "2019-09-30",
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
       "id": 10
+    },
+    {
+      "name": "Car Maintenance",
+      "amtStart": "250.00",
+      "amtRemaining": "197.84",
+      "dateEnd": "2019-09-30",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 11
+    },
+    {
+      "name": "Home Repairs",
+      "amtStart": "300",
+      "amtRemaining": "176.79000000000002",
+      "dateEnd": "2019-09-30",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 5,
+      "id": 12
     }
   ],
   "purchases": [
@@ -147,13 +165,49 @@
       "id": 9
     },
     {
-      "description": "Week 1",
-      "amount": "156.32",
-      "dateOfPurchase": "September 18, 2019",
+      "description": "Week 1 - Groceries",
+      "amount": "106.32",
+      "dateOfPurchase": "September 19, 2019",
       "budgetId": 10,
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 1,
       "id": 10
+    },
+    {
+      "description": "Week 2 - Groceries",
+      "amount": "93.21",
+      "dateOfPurchase": "September 19, 2019",
+      "budgetId": 10,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 11
+    },
+    {
+      "description": "Week 3 - Groceries",
+      "amount": "54.87",
+      "dateOfPurchase": "September 19, 2019",
+      "budgetId": 10,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 12
+    },
+    {
+      "description": "Oil Change",
+      "amount": "52.16",
+      "dateOfPurchase": "September 30, 2019",
+      "budgetId": 11,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 13
+    },
+    {
+      "description": "Landscaping",
+      "amount": "123.21",
+      "dateOfPurchase": "September 30, 2019",
+      "budgetId": 12,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 5,
+      "id": 14
     }
   ],
   "categories": [
