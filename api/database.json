@@ -89,6 +89,24 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 5,
       "id": 12
+    },
+    {
+      "name": "Groceries- October",
+      "amtStart": "1000",
+      "amtRemaining": "892.51",
+      "dateEnd": "2019-10-31",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 13
+    },
+    {
+      "name": "Car Maintenance",
+      "amtStart": "300",
+      "amtRemaining": "143.69",
+      "dateEnd": "2019-10-31",
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 14
     }
   ],
   "purchases": [
@@ -208,6 +226,24 @@
       "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
       "categoryId": 5,
       "id": 14
+    },
+    {
+      "description": "Week 1 - Groceries",
+      "amount": "107.49",
+      "dateOfPurchase": "October 2, 2019",
+      "budgetId": 13,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 1,
+      "id": 15
+    },
+    {
+      "description": "New Tires",
+      "amount": "156.31",
+      "dateOfPurchase": "October 2, 2019",
+      "budgetId": 14,
+      "userId": "xFuLreG3wNPIBRLbA37BbUmuQgr2",
+      "categoryId": 3,
+      "id": 16
     }
   ],
   "categories": [
